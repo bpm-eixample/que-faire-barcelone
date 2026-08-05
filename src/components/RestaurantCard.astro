@@ -1,0 +1,41 @@
+---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  name: string;
+  summary: string;
+  type: string;
+  area?: string;
+  price?: string;
+  url?: string;
+  emoji?: string;
+  image?: string;
+}
+const { lang, name, summary, type, area, price, url, emoji = '🍽️', image } = Astro.props;
+const t = useTranslations(lang);
+
+// Lien : URL fournie sinon recherche Google Maps (nom + quartier + Barcelona)
+const mapsQuery = encodeURIComponent(`${name} ${area ?? ''} Barcelona`.replace(/\s+/g, ' ').trim());
+const href = url && url !== '#' ? url : `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+---
+
+<a class="card resto" href={href} target="_blank" rel="noopener noreferrer" data-type={type} aria-label={name}>
+  <div class="thumb">
+    {image
+      ? <img src={image} alt={name} loading="lazy" />
+      : <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>}
+  </div>
+  <div class="body">
+    <span class="tag">{type}</span>
+    <h3>{name}</h3>
+    <div class="meta">
+      {area && <span>📍 {area}</span>}
+      {price && <span>💶 {price}</span>}
+    </div>
+    <p>{summary}</p>
+    <div class="card-foot">
+      <span class="link-more">{t('common.maps')}</span>
+    </div>
+  </div>
+</a>

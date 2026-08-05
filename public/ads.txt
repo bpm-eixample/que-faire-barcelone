@@ -1,0 +1,5 @@
+# ads.txt — autorise AdSense à vendre les espaces publicitaires de ce site.
+# Remplace pub-XXXXXXXXXXXXXXXX par TON identifiant éditeur AdSense
+# (celui de ADSENSE_CLIENT dans src/data/ads.ts, SANS le préfixe "ca-").
+# Puis redéploie. Vérifie ensuite sur https://tondomaine/ads.txt
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

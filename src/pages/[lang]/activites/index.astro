@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ActivityCard from '../../../components/ActivityCard.astro';
+import GygWidget from '../../../components/GygWidget.astro';
+import { paidActivities } from '../../../data/paidActivities';
+import { useTranslations, allLangs, defaultLang, type Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+const stripLang = (slug: string) => slug.replace(/^[a-z]{2}\//, '');
+
+const freeActivites = (await getCollection('activites', (e) => e.data.lang === lang && e.data.free))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout lang={lang} path="activites" title={t('page.activites.title')} description={t('page.activites.intro')} gyg={true}>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--c-terracotta);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;">{t('nav.activites')}</span>
+      <h1>{t('page.activites.title')}</h1>
+      <p>{t('page.activites.intro')}</p>
+    </div>
+  </section>
+
+  <!-- À RÉSERVER (payant - widgets GetYourGuide) -->
+  <section class="section anchor-target" id="reserver">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{t('sec.paid.title')}</span>
+        <h2>{t('sec.paid.title')}</h2>
+        <p>{t('sec.paid.sub')}</p>
+      </div>
+      <div class="gyg-grid">
+        {paidActivities.map((a) => (
+          <GygWidget tourId={a.tourId} lang={lang} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GRATUIT & PLEIN AIR -->
+  {freeActivites.length > 0 && (
+    <section class="section anchor-target" id="gratuit" style="background:var(--c-sand);">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">{t('sec.free.title')}</span>
+          <h2>{t('sec.free.title')}</h2>
+          <p>{t('sec.free.sub')}</p>
+        </div>
+        <div class="grid grid-3">
+          {freeActivites.map((a) => (
+            <ActivityCard
+              lang={lang}
+              slug={stripLang(a.slug)}
+              title={a.data.title}
+              summary={a.data.summary}
+              category={a.data.category}
+              area={a.data.area}
+              duration={a.data.duration}
+              price={a.data.price}
+              emoji={a.data.emoji}
+              image={a.data.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

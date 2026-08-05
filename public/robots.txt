@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quefaireabarcelone.com/sitemap-index.xml

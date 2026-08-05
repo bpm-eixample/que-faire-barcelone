@@ -1,0 +1,50 @@
+---
+import { useTranslations, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  summary: string;
+  date: Date;
+  endDate?: Date;
+  location?: string;
+  category?: string;
+  url?: string;
+  emoji?: string;
+  image?: string;
+}
+const { lang, title, summary, date, endDate, location, category, url, emoji = '🎉', image } = Astro.props;
+const t = useTranslations(lang);
+
+const localeMap = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' } as const;
+const fmt = (d: Date, withYear = false) =>
+  new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'short', ...(withYear ? { year: 'numeric' } : {}) }).format(d);
+
+// Badge date : un jour, ou plage "X – Y"
+const sameMonth = endDate && date.getMonth() === endDate.getMonth() && date.getFullYear() === endDate.getFullYear();
+const dateLabel = endDate
+  ? (sameMonth ? `${date.getDate()}–${fmt(endDate)}` : `${fmt(date)} – ${fmt(endDate)}`)
+  : fmt(date, true);
+
+const isExternal = !!url && url !== '#';
+---
+
+<article class="card event">
+  <div class="thumb">
+    <span class="badge badge-date">🗓️ {dateLabel}</span>
+    {image
+      ? <img src={image} alt={title} loading="lazy" />
+      : <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>}
+  </div>
+  <div class="body">
+    {category && <span class="tag">{category}</span>}
+    <h3>{title}</h3>
+    {location && <div class="meta"><span>📍 {location}</span></div>}
+    <p>{summary}</p>
+    {isExternal && (
+      <div class="card-foot">
+        <a class="btn btn-primary" href={url} target="_blank" rel="noopener noreferrer">{t('common.eventInfo')}</a>
+      </div>
+    )}
+  </div>
+</article>

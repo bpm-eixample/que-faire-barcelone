@@ -1,0 +1,14 @@
+# Configuration Netlify pour le site "Que Faire à Barcelone"
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Petite redirection : la racine renvoie vers la version française
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = true

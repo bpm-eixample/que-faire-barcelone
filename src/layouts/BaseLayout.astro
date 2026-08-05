@@ -1,0 +1,133 @@
+---
+import { useTranslations, localizePath, allLangs, defaultLang, type Lang } from '../i18n/utils';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import { GYG_PARTNER_ID } from '../data/paidActivities';
+import { ADSENSE_CLIENT } from '../data/ads';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  /** section path without lang prefix, used for nav active state + lang switcher */
+  path?: string;
+  /** charge le script des widgets GetYourGuide */
+  gyg?: boolean;
+  /** image OG/réseaux sociaux (chemin absolu type /images/x.jpg) */
+  ogImage?: string;
+  /** Génère les liens hreflang à partir de `path` (vrai pour les pages dont l'URL est identique entre langues). Mettre à false pour les pages de détail (slugs différents). */
+  hreflang?: boolean;
+  /** Données structurées JSON-LD (objet schema.org) injectées dans le head. */
+  jsonLd?: Record<string, unknown>;
+  /** URLs de traduction explicites par langue (pages de détail aux slugs différents). */
+  translations?: Partial<Record<Lang, string>>;
+}
+const { lang, title, description, path = '', gyg = false, ogImage, hreflang = true, jsonLd, translations } = Astro.props;
+const t = useTranslations(lang);
+const pageTitle = title ? `${title} · ${t('site.name')}` : `${t('site.name')} — ${t('site.tagline')}`;
+const desc = description ?? t('hero.subtitle');
+
+const withSlash = (u: string) => (u.endsWith('/') ? u : u + '/');
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).toString() : new URL('/images/hero.jpg', Astro.site).toString();
+
+let alternates: { lang: string; url: string }[] = [];
+let xDefault: string | null = null;
+if (translations) {
+  alternates = (Object.entries(translations) as [Lang, string][])
+    .map(([l, u]) => ({ lang: l, url: new URL(withSlash(u), Astro.site).toString() }));
+  xDefault = translations[defaultLang] ? new URL(withSlash(translations[defaultLang]!), Astro.site).toString() : (alternates[0]?.url ?? null);
+} else if (hreflang) {
+  alternates = allLangs.map((l) => ({ lang: l, url: new URL(withSlash(localizePath(l, path)), Astro.site).toString() }));
+  xDefault = new URL(withSlash(localizePath(defaultLang, path)), Astro.site).toString();
+}
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Active le pré-masquage des éléments à révéler (synchrone, évite le clignotement)
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reveal-on');
+      }
+    </script>
+    <script is:inline>
+      // Google Consent Mode v2 — refus par défaut tant que l'utilisateur n'a pas choisi
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+        analytics_storage: 'denied', wait_for_update: 500
+      });
+      try {
+        if (localStorage.getItem('cookie-consent') === 'granted') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted', ad_user_data: 'granted',
+            ad_personalization: 'granted', analytics_storage: 'granted'
+          });
+        }
+      } catch (e) {}
+    </script>
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/logo/favicon-fond-rouge.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => (
+      <link rel="alternate" hreflang={a.lang} href={a.url} />
+    ))}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
+    <meta property="og:site_name" content={t('site.name')} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <Header lang={lang} path={path} translations={translations} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} path={path} translations={translations} />
+    <CookieConsent lang={lang} />
+    {gyg && (
+      <script is:inline async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id={GYG_PARTNER_ID}></script>
+    )}
+    {ADSENSE_CLIENT && (
+      <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`} crossorigin="anonymous"></script>
+    )}
+    <script is:inline>
+      // Apparition progressive au défilement
+      (function () {
+        if (!document.documentElement.classList.contains('reveal-on') || !('IntersectionObserver' in window)) return;
+        var els = document.querySelectorAll('.section-head, .card, .partner, .gyg-card, .aff-card, .prose > *');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        els.forEach(function (el) {
+          var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+          el.style.transitionDelay = (Math.min(sib, 5) * 70) + 'ms';
+          io.observe(el);
+        });
+        // Filet de sécurité : tout révéler après 2,5 s au cas où
+        setTimeout(function () {
+          els.forEach(function (el) { el.classList.add('is-visible'); });
+        }, 2500);
+      })();
+    </script>
+  </body>
+</html>

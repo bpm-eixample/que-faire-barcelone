@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { useTranslations, allLangs, defaultLang, type Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+const stripLang = (slug: string) => slug.replace(/^[a-z]{2}\//, '');
+
+const posts = (await getCollection('blog', (e) => e.data.lang === lang))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Catégories = tag principal (1er tag) de chaque article, dédupliquées
+const categories: string[] = [];
+for (const p of posts) {
+  const c = p.data.tags?.[0];
+  if (c && !categories.includes(c)) categories.push(c);
+}
+categories.sort((a, b) => a.localeCompare(b, lang));
+---
+
+<BaseLayout lang={lang} path="blog" title={t('page.blog.title')} description={t('page.blog.intro')}>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--c-terracotta);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;">{t('nav.blog')}</span>
+      <h1>{t('page.blog.title')}</h1>
+      <p>{t('page.blog.intro')}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-search">
+        <span class="blog-search-icon" aria-hidden="true">🔍</span>
+        <input
+          type="search"
+          id="blog-search"
+          placeholder={t('blog.search.placeholder')}
+          aria-label={t('blog.search.placeholder')}
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="blog-filters" id="blog-filters">
+        <button type="button" class="chip-filter is-active" data-cat="">{t('blog.filter.all')}</button>
+        {categories.map((c) => (
+          <button type="button" class="chip-filter" data-cat={c}>{c}</button>
+        ))}
+      </div>
+
+      <div class="grid grid-3" id="blog-grid">
+        {posts.map((p) => (
+          <BlogCard
+            lang={lang}
+            slug={stripLang(p.slug)}
+            title={p.data.title}
+            summary={p.data.summary}
+            date={p.data.date}
+            emoji={p.data.emoji}
+            tags={p.data.tags}
+          />
+        ))}
+      </div>
+
+      <p id="blog-none" class="blog-none" hidden>{t('blog.search.none')}</p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      const input = document.getElementById('blog-search');
+      const grid = document.getElementById('blog-grid');
+      const none = document.getElementById('blog-none');
+      const filters = document.getElementById('blog-filters');
+      if (!input || !grid) return;
+      const cards = Array.from(grid.querySelectorAll('[data-search]'));
+      const norm = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+      let activeCat = '';
+
+      function apply() {
+        const words = norm(input.value.trim()).split(/\s+/).filter(Boolean);
+        const cat = norm(activeCat);
+        let visible = 0;
+        cards.forEach(function (card) {
+          const hay = norm(card.getAttribute('data-search'));
+          const cardCat = norm(card.getAttribute('data-category'));
+          const matchText = words.every(function (w) { return hay.indexOf(w) !== -1; });
+          const matchCat = !cat || cardCat === cat;
+          const show = matchText && matchCat;
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        if (none) none.hidden = visible !== 0;
+      }
+
+      input.addEventListener('input', apply);
+
+      if (filters) {
+        const chips = Array.from(filters.querySelectorAll('.chip-filter'));
+        chips.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            chips.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            activeCat = btn.getAttribute('data-cat') || '';
+            apply();
+          });
+        });
+      }
+    })();
+  </script>
+</BaseLayout>

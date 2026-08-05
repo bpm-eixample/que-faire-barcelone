@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations, localizePath, type Lang } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const all = await getCollection('activites');
+  return all.map((entry) => {
+    const slug = entry.slug.replace(/^[a-z]{2}\//, '');
+    const translations: Record<string, string> = {};
+    for (const e of all) {
+      if (e.slug.replace(/^[a-z]{2}\//, '') === slug) {
+        translations[e.data.lang] = `/${e.data.lang}/activites/${slug}`;
+      }
+    }
+    return { params: { lang: entry.data.lang, slug }, props: { entry, translations } };
+  });
+}
+
+const { entry, translations } = Astro.props;
+const lang = entry.data.lang as Lang;
+const t = useTranslations(lang);
+const { Content } = await entry.render();
+const d = entry.data;
+---
+
+<BaseLayout lang={lang} path="activites" title={d.title} description={d.summary} ogImage={d.image} translations={translations}>
+  <section class="page-head">
+    <div class="container">
+      <a href={localizePath(lang, 'activites')} class="link-more" style="display:inline-block;margin-bottom:1rem;">← {t('nav.activites')}</a>
+      <span class="tag">{d.category}</span>
+      <h1 style="margin-top:.6rem;">{d.emoji} {d.title}</h1>
+      <p>{d.summary}</p>
+      <div class="meta" style="display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1rem;color:var(--c-muted);">
+        <span><strong>{t('common.area')}:</strong> {d.area}</span>
+        {d.duration && <span><strong>{t('common.duration')}:</strong> {d.duration}</span>}
+        {d.price && <span><strong>{t('common.from')}:</strong> {d.price}</span>}
+      </div>
+      {d.bookingUrl && (
+        <a class="btn btn-primary" style="margin-top:1.4rem;" href={d.bookingUrl} target="_blank" rel="noopener noreferrer">{t('common.bookOn')}</a>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

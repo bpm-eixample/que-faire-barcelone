@@ -1,0 +1,54 @@
+---
+import { useTranslations, localizePath, type Lang } from '../i18n/utils';
+import LangSwitcher from './LangSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+  /** current section path without lang prefix, for lang switcher + active state */
+  path?: string;
+  /** URLs de traduction explicites par langue (pages de détail) */
+  translations?: Partial<Record<Lang, string>>;
+}
+const { lang, path = '', translations } = Astro.props;
+const t = useTranslations(lang);
+
+const current = '/' + path.replace(/^\/+|\/+$/g, '');
+const links = [
+  { key: 'nav.activites', href: 'activites' },
+  { key: 'nav.evenements', href: 'evenements' },
+  { key: 'nav.ouManger', href: 'ou-manger' },
+  { key: 'nav.vieNocturne', href: 'vie-nocturne' },
+  { key: 'nav.blog', href: 'blog' },
+] as const;
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href={localizePath(lang)} aria-label={t('site.name')}>
+      <img class="brand-logo" src="/assets/logo/logo-horizontal-couleur.svg" alt={t('site.name')} width="600" height="200" />
+    </a>
+
+    <nav class="nav" id="primary-nav">
+      {links.map((l) => (
+        <a
+          href={localizePath(lang, l.href)}
+          aria-current={current === '/' + l.href ? 'page' : undefined}
+        >{t(l.key as any)}</a>
+      ))}
+    </nav>
+
+    <div class="header-right">
+      <LangSwitcher lang={lang} path={path} translations={translations} />
+      <button class="nav-toggle" aria-label={t('nav.menu')} aria-expanded="false" aria-controls="primary-nav">☰</button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(!!open));
+  });
+</script>

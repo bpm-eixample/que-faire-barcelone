@@ -1,0 +1,266 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ActivityCard from '../../components/ActivityCard.astro';
+import GygWidget from '../../components/GygWidget.astro';
+import EventCard from '../../components/EventCard.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { paidActivities } from '../../data/paidActivities';
+import { useTranslations, localizePath, allLangs, defaultLang, type Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+
+const stripLang = (slug: string) => slug.replace(/^[a-z]{2}\//, '');
+const byLang = (lang: Lang) => (e: { data: { lang: Lang } }) => e.data.lang === lang;
+
+const freeActivites = (await getCollection('activites', (e) => e.data.lang === lang && e.data.free))
+  .sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+
+// Activités payantes mises en avant (widgets GetYourGuide)
+const homePaid = (paidActivities.filter((a) => a.featured).length
+  ? paidActivities.filter((a) => a.featured)
+  : paidActivities).slice(0, 3);
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const upcomingEvents = (await getCollection('evenements', (e) => e.data.lang === lang))
+  .filter((e) => (e.data.endDate ?? e.data.date) >= today)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+const events = upcomingEvents.slice(0, 3);
+
+// Bandeau défilant (marquee) des événements à venir
+const localeMap = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' } as const;
+const tickerItems = upcomingEvents.slice(0, 8).map((e) => ({
+  emoji: e.data.emoji,
+  label: `${new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'short' }).format(e.data.date)} · ${e.data.title}${e.data.location ? ' · ' + e.data.location : ''}`,
+}));
+
+const posts = (await getCollection('blog', byLang(lang)))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: t('site.name'),
+  description: t('hero.subtitle'),
+  url: new URL(localizePath(lang), Astro.site).toString(),
+  inLanguage: lang,
+  publisher: { '@type': 'Organization', name: t('site.name') },
+};
+
+// Bulles de raccourci sous le hero
+const shortcuts = [
+  { emoji: '🎟️', label: t('sec.paid.title'), href: localizePath(lang, 'activites') + '#reserver' },
+  { emoji: '🏖️', label: t('sec.free.title'), href: localizePath(lang, 'activites') + '#gratuit' },
+  { emoji: '🎉', label: t('nav.evenements'), href: localizePath(lang, 'evenements') },
+  { emoji: '🍽️', label: t('nav.ouManger'), href: localizePath(lang, 'ou-manger') },
+  { emoji: '🍸', label: t('nav.vieNocturne'), href: localizePath(lang, 'vie-nocturne') },
+  { emoji: '📝', label: t('nav.blog'), href: localizePath(lang, 'blog') },
+];
+---
+
+<BaseLayout lang={lang} path="" gyg={true} jsonLd={jsonLd}>
+  <!-- HERO -->
+  <section class="hero">
+    <canvas class="hero-motes" id="hero-motes" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="hero-inner">
+        <span class="pill">🇪🇸 Barcelona · FR · EN · ES</span>
+        <h1>{t('hero.title')}</h1>
+        <p>{t('hero.subtitle')}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={localizePath(lang, 'activites')}>{t('hero.cta')}</a>
+          <a class="btn btn-ghost" href={localizePath(lang, 'evenements')}>{t('hero.cta2')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BULLES DE RACCOURCI -->
+  <nav class="shortcuts-band" aria-label="Raccourcis">
+    <div class="container home-shortcuts">
+      {shortcuts.map((s) => (
+        <a class="shortcut-chip" href={s.href}>
+          <span class="e" aria-hidden="true">{s.emoji}</span>{s.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  {tickerItems.length > 0 && (
+    <div class="ticker" aria-label={t('nav.evenements')}>
+      <div class="ticker-track">
+        {[...tickerItems, ...tickerItems].map((it) => (
+          <span class="ticker-item"><span class="ticker-e" aria-hidden="true">{it.emoji}</span>{it.label}</span>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- ACTIVITÉS À RÉSERVER (widgets GetYourGuide) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head head-row">
+        <div>
+          <span class="eyebrow">{t('sec.paid.title')}</span>
+          <h2>{t('home.paid.title')}</h2>
+          <p>{t('home.paid.subtitle')}</p>
+        </div>
+        <a class="link-more" href={localizePath(lang, 'activites')}>{t('common.seeAll')}</a>
+      </div>
+      <div class="gyg-grid">
+        {homePaid.map((a) => (
+          <GygWidget tourId={a.tourId} lang={lang} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GRATUIT & PLEIN AIR -->
+  {freeActivites.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head head-row">
+          <div>
+            <span class="eyebrow">{t('sec.free.title')}</span>
+            <h2>{t('home.activites.title')}</h2>
+            <p>{t('sec.free.sub')}</p>
+          </div>
+          <a class="link-more" href={localizePath(lang, 'activites')}>{t('common.seeAll')}</a>
+        </div>
+        <div class="grid grid-3">
+          {freeActivites.map((a) => (
+            <ActivityCard
+              lang={lang}
+              slug={stripLang(a.slug)}
+              title={a.data.title}
+              summary={a.data.summary}
+              category={a.data.category}
+              area={a.data.area}
+              duration={a.data.duration}
+              price={a.data.price}
+              emoji={a.data.emoji}
+              image={a.data.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ÉVÉNEMENTS -->
+  {events.length > 0 && (
+    <section class="section" style="background:var(--c-sand);">
+      <div class="container">
+        <div class="section-head head-row">
+          <div>
+            <span class="eyebrow">{t('nav.evenements')}</span>
+            <h2>{t('home.events.title')}</h2>
+            <p>{t('home.events.subtitle')}</p>
+          </div>
+          <a class="link-more" href={localizePath(lang, 'evenements')}>{t('common.seeAll')}</a>
+        </div>
+        <div class="grid grid-3">
+          {events.map((e) => (
+            <EventCard
+              lang={lang}
+              title={e.data.title}
+              summary={e.data.summary}
+              date={e.data.date}
+              endDate={e.data.endDate}
+              location={e.data.location}
+              category={e.data.category}
+              url={e.data.url}
+              emoji={e.data.emoji}
+              image={e.data.image}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- BLOG -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head head-row">
+        <div>
+          <span class="eyebrow">{t('nav.blog')}</span>
+          <h2>{t('home.blog.title')}</h2>
+          <p>{t('home.blog.subtitle')}</p>
+        </div>
+        <a class="link-more" href={localizePath(lang, 'blog')}>{t('common.seeAll')}</a>
+      </div>
+      <div class="grid grid-3">
+        {posts.map((p) => (
+          <BlogCard
+            lang={lang}
+            slug={stripLang(p.slug)}
+            title={p.data.title}
+            summary={p.data.summary}
+            date={p.data.date}
+            emoji={p.data.emoji}
+            tags={p.data.tags}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>{t('cta.title')}</h2>
+      <p>{t('cta.text')}</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href={localizePath(lang, 'activites')}>{t('hero.cta')}</a>
+        <a class="btn btn-ghost" href={localizePath(lang, 'evenements')}>{t('hero.cta2')}</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    // Particules chaudes flottantes, confinées au hero
+    (function () {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var c = document.getElementById('hero-motes');
+      if (!c || !c.getContext) return;
+      var ctx = c.getContext('2d'), w, h, motes;
+      var hero = c.parentElement;
+      function resize() { w = c.width = hero.offsetWidth; h = c.height = hero.offsetHeight; }
+      function make() {
+        var n = Math.min(38, Math.floor(w / 34));
+        motes = Array.from({ length: n }, function () {
+          return {
+            x: Math.random() * w, y: Math.random() * h,
+            r: Math.random() * 2.4 + 0.6,
+            vx: (Math.random() - 0.5) * 0.2,
+            vy: -(Math.random() * 0.3 + 0.05),
+            a: Math.random() * 0.45 + 0.15,
+            gold: Math.random() > 0.5,
+          };
+        });
+      }
+      function tick() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < motes.length; i++) {
+          var s = motes[i];
+          s.x += s.vx; s.y += s.vy;
+          if (s.y < -10) { s.y = h + 10; s.x = Math.random() * w; }
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = s.gold ? 'rgba(244,185,66,' + s.a + ')' : 'rgba(255,255,255,' + (s.a * 0.8) + ')';
+          ctx.fill();
+        }
+        requestAnimationFrame(tick);
+      }
+      resize(); make(); tick();
+      addEventListener('resize', function () { resize(); make(); }, { passive: true });
+    })();
+  </script>
+</BaseLayout>

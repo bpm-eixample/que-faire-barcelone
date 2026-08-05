@@ -1,0 +1,23 @@
+---
+import { type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  name: string;
+  category: string;
+  summary: string;
+  url?: string;
+  emoji?: string;
+  image?: string;
+}
+const { name, category, summary, url, emoji = '🤝', image } = Astro.props;
+---
+
+<article class="partner">
+  <div class="p-logo">
+    {image ? <img src={image} alt={name} loading="lazy" /> : emoji}
+  </div>
+  <span class="p-cat">{category}</span>
+  <h3>{url ? <a href={url} target="_blank" rel="noopener noreferrer" style="color:inherit">{name}</a> : name}</h3>
+  <p style="color:var(--c-muted); font-size:.9rem; margin:.4rem 0 0;">{summary}</p>
+</article>

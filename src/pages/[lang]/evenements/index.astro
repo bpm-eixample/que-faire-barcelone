@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import EventCard from '../../../components/EventCard.astro';
+import { useTranslations, allLangs, defaultLang, type Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+
+// Événements à venir : on garde ceux dont la date de fin (ou de début) est >= aujourd'hui
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const events = (await getCollection('evenements', (e) => e.data.lang === lang))
+  .filter((e) => (e.data.endDate ?? e.data.date) >= today)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+---
+
+<BaseLayout lang={lang} path="evenements" title={t('page.events.title')} description={t('page.events.intro')}>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--c-terracotta);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;">{t('nav.evenements')}</span>
+      <h1>{t('page.events.title')}</h1>
+      <p>{t('page.events.intro')}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {events.length > 0 ? (
+        <div class="grid grid-3">
+          {events.map((e) => (
+            <EventCard
+              lang={lang}
+              title={e.data.title}
+              summary={e.data.summary}
+              date={e.data.date}
+              endDate={e.data.endDate}
+              location={e.data.location}
+              category={e.data.category}
+              url={e.data.url}
+              emoji={e.data.emoji}
+              image={e.data.image}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="center" style="color:var(--c-muted);padding:2rem 0;">{t('events.none')}</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

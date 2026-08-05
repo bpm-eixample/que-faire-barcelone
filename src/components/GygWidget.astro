@@ -1,0 +1,31 @@
+---
+import { GYG_PARTNER_ID } from '../data/paidActivities';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  tourId: string;
+  lang: Lang;
+}
+const { tourId, lang } = Astro.props;
+
+// Correspondance langue du site -> code locale GetYourGuide
+const gygLocale: Record<Lang, string> = {
+  fr: 'fr-FR',
+  en: 'en-US',
+  es: 'es-ES',
+};
+const locale = gygLocale[lang] ?? 'en-US';
+---
+
+<div
+  class="gyg-card"
+  data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
+  data-gyg-locale-code={locale}
+  data-gyg-widget="activities"
+  data-gyg-number-of-items="1"
+  data-gyg-partner-id={GYG_PARTNER_ID}
+  data-gyg-tour-ids={tourId}
+  data-gyg-hide-join-affiliate-program="true"
+>
+  <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/barcelona-l45/">GetYourGuide</a></span>
+</div>

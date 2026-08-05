@@ -1,0 +1,18 @@
+---
+import { defaultLang } from '../i18n/ui';
+const target = `/${defaultLang}/`;
+---
+<!doctype html>
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <link rel="canonical" href={target} />
+    <meta name="robots" content="noindex" />
+    <title>Que Faire à Barcelone</title>
+  </head>
+  <body>
+    <a href={target}>Que Faire à Barcelone →</a>
+    <script is:inline>window.location.replace('/fr/');</script>
+  </body>
+</html>

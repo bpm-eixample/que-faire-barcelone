@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdSlot from '../../../components/AdSlot.astro';
+import AffiliateStrip from '../../../components/AffiliateStrip.astro';
+import { useTranslations, localizePath, type Lang } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const all = await getCollection('blog');
+  return all.map((entry) => {
+    const slug = entry.slug.replace(/^[a-z]{2}\//, '');
+    const translations: Record<string, string> = {};
+    if (entry.data.key) {
+      for (const e of all) {
+        if (e.data.key === entry.data.key) {
+          translations[e.data.lang] = `/${e.data.lang}/blog/${e.slug.replace(/^[a-z]{2}\//, '')}`;
+        }
+      }
+    }
+    return { params: { lang: entry.data.lang, slug }, props: { entry, translations } };
+  });
+}
+
+const { entry, translations } = Astro.props;
+const lang = entry.data.lang as Lang;
+const t = useTranslations(lang);
+const { Content } = await entry.render();
+const d = entry.data;
+const localeMap = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' } as const;
+const dateStr = new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(d.date);
+
+const siteName = t('site.name');
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: d.title,
+  description: d.summary,
+  datePublished: d.date.toISOString(),
+  inLanguage: lang,
+  author: { '@type': 'Organization', name: d.author || siteName },
+  publisher: { '@type': 'Organization', name: siteName },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+};
+---
+
+<BaseLayout lang={lang} path="blog" title={d.title} description={d.summary} jsonLd={jsonLd} translations={translations}>
+  <section class="page-head">
+    <div class="container">
+      <a href={localizePath(lang, 'blog')} class="link-more" style="display:inline-block;margin-bottom:1rem;">← {t('nav.blog')}</a>
+      {d.tags[0] && <span class="tag">{d.tags[0]}</span>}
+      <h1 style="margin-top:.6rem;">{d.title}</h1>
+      <p>{d.summary}</p>
+      <div class="meta" style="margin-top:.5rem;color:var(--c-muted);">
+        <span>🗓️ {t('common.published')} {dateStr}</span> · <span>✍️ {d.author}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="prose">
+        <Content />
+      </article>
+      <AffiliateStrip lang={lang} />
+      <AdSlot slot="inArticle" />
+    </div>
+  </section>
+</BaseLayout>

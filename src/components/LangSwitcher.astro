@@ -1,0 +1,24 @@
+---
+import { allLangs, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  /** path without language prefix, e.g. "activites" or "" for home */
+  path?: string;
+  /** URLs de traduction explicites par langue (pages de détail) ; sinon fallback sur `path` */
+  translations?: Partial<Record<Lang, string>>;
+}
+const { lang, path = '', translations } = Astro.props;
+const clean = path.replace(/^\/+|\/+$/g, '');
+const urlFor = (l: Lang) => (translations && translations[l]) ? translations[l]! : (clean ? `/${l}/${clean}` : `/${l}`);
+---
+
+<div class="lang-switch" role="group" aria-label="Language">
+  {allLangs.map((l) => (
+    <a
+      href={urlFor(l)}
+      aria-current={l === lang ? 'true' : 'false'}
+      hreflang={l}
+    >{l}</a>
+  ))}
+</div>

@@ -1,0 +1,45 @@
+---
+import { localizePath, type Lang } from '../i18n/utils';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const txt = {
+  fr: { msg: 'Nous utilisons des cookies pour améliorer votre expérience et afficher des publicités.', more: 'En savoir plus', accept: 'Accepter', refuse: 'Refuser' },
+  en: { msg: 'We use cookies to improve your experience and show ads.', more: 'Learn more', accept: 'Accept', refuse: 'Decline' },
+  es: { msg: 'Usamos cookies para mejorar tu experiencia y mostrar anuncios.', more: 'Más información', accept: 'Aceptar', refuse: 'Rechazar' },
+}[lang];
+---
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p class="cookie-text">
+    {txt.msg} <a href={localizePath(lang, 'mentions')}>{txt.more}</a>
+  </p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-outline" id="cookie-refuse">{txt.refuse}</button>
+    <button type="button" class="btn btn-primary" id="cookie-accept">{txt.accept}</button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    var stored;
+    try { stored = localStorage.getItem('cookie-consent'); } catch (e) {}
+    if (!stored) banner.hidden = false;
+
+    function choose(value) {
+      try { localStorage.setItem('cookie-consent', value); } catch (e) {}
+      if (typeof gtag === 'function') {
+        var g = value === 'granted' ? 'granted' : 'denied';
+        gtag('consent', 'update', {
+          ad_storage: g, ad_user_data: g, ad_personalization: g, analytics_storage: g
+        });
+      }
+      banner.hidden = true;
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function () { choose('granted'); });
+    document.getElementById('cookie-refuse').addEventListener('click', function () { choose('denied'); });
+  })();
+</script>

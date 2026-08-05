@@ -1,0 +1,25 @@
+---
+import { affiliatePrograms, affiliateUrl, AFF_TITLE, AFF_CTA } from '../data/affiliates';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<aside class="aff-strip" aria-label={AFF_TITLE[lang]}>
+  <h3 class="aff-title">{AFF_TITLE[lang]}</h3>
+  <div class="aff-grid">
+    {affiliatePrograms.map((p) => (
+      <a class="aff-card" href={affiliateUrl(p)} target="_blank" rel="sponsored noopener noreferrer">
+        <span class="aff-emoji" aria-hidden="true">{p.emoji}</span>
+        <span class="aff-text">
+          <strong>{p.labels[lang].name}</strong>
+          <small>{p.labels[lang].desc}</small>
+        </span>
+        <span class="aff-cta">{AFF_CTA[lang]} →</span>
+      </a>
+    ))}
+  </div>
+</aside>

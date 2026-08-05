@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RestaurantCard from '../../../components/RestaurantCard.astro';
+import { useTranslations, allLangs, defaultLang, type Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+
+const restaurants = (await getCollection('restaurants', (e) => e.data.lang === lang))
+  .sort((a, b) => a.data.order - b.data.order);
+
+// Catégories = types de cuisine, dédupliqués
+const types: string[] = [];
+for (const r of restaurants) {
+  if (r.data.type && !types.includes(r.data.type)) types.push(r.data.type);
+}
+types.sort((a, b) => a.localeCompare(b, lang));
+---
+
+<BaseLayout lang={lang} path="ou-manger" title={t('page.ouManger.title')} description={t('page.ouManger.intro')}>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--c-terracotta);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;">{t('nav.ouManger')}</span>
+      <h1>{t('page.ouManger.title')}</h1>
+      <p>{t('page.ouManger.intro')}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-filters" id="resto-filters">
+        <button type="button" class="chip-filter is-active" data-cat="">{t('blog.filter.all')}</button>
+        {types.map((ty) => (
+          <button type="button" class="chip-filter" data-cat={ty}>{ty}</button>
+        ))}
+      </div>
+
+      <div class="grid grid-3" id="resto-grid">
+        {restaurants.map((r) => (
+          <RestaurantCard
+            lang={lang}
+            name={r.data.name}
+            summary={r.data.summary}
+            type={r.data.type}
+            area={r.data.area}
+            price={r.data.price}
+            url={r.data.url}
+            emoji={r.data.emoji}
+            image={r.data.image}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var grid = document.getElementById('resto-grid');
+      var filters = document.getElementById('resto-filters');
+      if (!grid || !filters) return;
+      var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-type]'));
+      var norm = function (s) { return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); };
+      var chips = Array.prototype.slice.call(filters.querySelectorAll('.chip-filter'));
+      chips.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          chips.forEach(function (b) { b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          var cat = norm(btn.getAttribute('data-cat'));
+          cards.forEach(function (card) {
+            var show = !cat || norm(card.getAttribute('data-type')) === cat;
+            card.style.display = show ? '' : 'none';
+          });
+        });
+      });
+    })();
+  </script>
+</BaseLayout>

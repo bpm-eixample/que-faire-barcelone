@@ -1,0 +1,57 @@
+---
+import { useTranslations, localizePath, allLangs, languages, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  path?: string;
+  translations?: Partial<Record<Lang, string>>;
+}
+const { lang, path = '', translations } = Astro.props;
+const t = useTranslations(lang);
+const clean = path.replace(/^\/+|\/+$/g, '');
+const langUrl = (l: Lang) => (translations && translations[l]) ? translations[l]! : (clean ? `/${l}/${clean}` : `/${l}`);
+
+const links = [
+  { key: 'nav.activites', href: 'activites' },
+  { key: 'nav.evenements', href: 'evenements' },
+  { key: 'nav.ouManger', href: 'ou-manger' },
+  { key: 'nav.vieNocturne', href: 'vie-nocturne' },
+  { key: 'nav.blog', href: 'blog' },
+] as const;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="/assets/logo/logo-horizontal-blanc.svg" alt={t('site.name')} width="600" height="200" />
+        <p style="margin:.9rem 0 0; max-width:34ch;">{t('footer.about')}</p>
+      </div>
+
+      <div>
+        <h4>{t('footer.explore')}</h4>
+        <ul>
+          {links.map((l) => (
+            <li><a href={localizePath(lang, l.href)}>{t(l.key as any)}</a></li>
+          ))}
+          <li><a href={localizePath(lang, 'partenaires')}>{t('footer.partner')}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>{t('footer.langs')}</h4>
+        <ul>
+          {allLangs.map((l) => (
+            <li><a href={langUrl(l)} hreflang={l}>{languages[l]}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {year} {t('site.name')}. {t('footer.rights')}</span>
+      <span><a href={localizePath(lang, 'mentions')}>{t('footer.legal')}</a> · {t('site.tagline')}</span>
+    </div>
+  </div>
+</footer>

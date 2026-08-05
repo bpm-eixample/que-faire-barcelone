@@ -1,0 +1,33 @@
+---
+import { ADSENSE_CLIENT, AD_SLOTS, adsEnabled } from '../data/ads';
+
+interface Props {
+  /** clé du bloc d'annonce dans AD_SLOTS (ex. "inArticle") */
+  slot?: keyof typeof AD_SLOTS;
+  /** libellé du placeholder (mode non configuré) */
+  label?: string;
+}
+const { slot = 'inArticle', label = 'Emplacement publicitaire' } = Astro.props;
+const adSlotId = AD_SLOTS[slot];
+const showRealAd = adsEnabled && !!adSlotId;
+---
+
+<aside class="ad-slot" aria-label="Publicité">
+  {showRealAd ? (
+    <>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={ADSENSE_CLIENT}
+        data-ad-slot={adSlotId}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </>
+  ) : (
+    <div class="ad-slot-placeholder">
+      <span>{label}</span>
+    </div>
+  )}
+</aside>

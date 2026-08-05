@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { allLangs, defaultLang, type Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+
+interface FormContent {
+  eyebrow: string; title: string; intro: string;
+  business: string; type: string; contact: string; email: string; phone: string; message: string;
+  submit: string; success: string; types: string[];
+}
+const content: Record<Lang, FormContent> = {
+  fr: {
+    eyebrow: 'Partenaires', title: 'Devenir partenaire',
+    intro: "Vous êtes un restaurant, un hôtel ou un prestataire à Barcelone ? Rejoignez notre guide et gagnez en visibilité auprès des voyageurs du monde entier.",
+    business: "Nom de l'établissement", type: "Type d'activité", contact: 'Votre nom', email: 'E-mail',
+    phone: 'Téléphone (optionnel)', message: 'Votre message', submit: 'Envoyer ma demande',
+    success: 'Merci ! Votre demande a bien été envoyée. Nous revenons vers vous très vite. 🙌',
+    types: ['Restaurant', 'Hôtel / Hébergement', 'Activité / Visite', 'Bar / Café', 'Boutique', 'Autre'],
+  },
+  en: {
+    eyebrow: 'Partners', title: 'Become a partner',
+    intro: 'Are you a restaurant, a hotel or an activity provider in Barcelona? Join our guide and gain visibility with travellers from all over the world.',
+    business: 'Business name', type: 'Type of business', contact: 'Your name', email: 'Email',
+    phone: 'Phone (optional)', message: 'Your message', submit: 'Send my request',
+    success: 'Thank you! Your request has been sent. We will get back to you very soon. 🙌',
+    types: ['Restaurant', 'Hotel / Accommodation', 'Activity / Tour', 'Bar / Café', 'Shop', 'Other'],
+  },
+  es: {
+    eyebrow: 'Colaboradores', title: 'Hazte colaborador',
+    intro: '¿Eres un restaurante, un hotel o un proveedor de actividades en Barcelona? Únete a nuestra guía y gana visibilidad ante viajeros de todo el mundo.',
+    business: 'Nombre del establecimiento', type: 'Tipo de actividad', contact: 'Tu nombre', email: 'Correo electrónico',
+    phone: 'Teléfono (opcional)', message: 'Tu mensaje', submit: 'Enviar mi solicitud',
+    success: '¡Gracias! Tu solicitud se ha enviado. Te responderemos muy pronto. 🙌',
+    types: ['Restaurante', 'Hotel / Alojamiento', 'Actividad / Visita', 'Bar / Café', 'Tienda', 'Otro'],
+  },
+};
+const c = content[lang];
+---
+
+<BaseLayout lang={lang} path="partenaires" title={c.title} description={c.intro}>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--c-terracotta);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;">{c.eyebrow}</span>
+      <h1>{c.title}</h1>
+      <p>{c.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <form
+        name="devenir-partenaire"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        id="partner-form"
+        class="partner-form"
+      >
+        <input type="hidden" name="form-name" value="devenir-partenaire" />
+        <input type="hidden" name="lang" value={lang} />
+        <p class="hp"><label>Ne pas remplir <input name="bot-field" /></label></p>
+
+        <div class="form-row">
+          <label>{c.business}<input type="text" name="business" required /></label>
+          <label>{c.type}
+            <select name="type">
+              {c.types.map((o) => <option value={o}>{o}</option>)}
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>{c.contact}<input type="text" name="contact" required /></label>
+          <label>{c.email}<input type="email" name="email" required /></label>
+        </div>
+        <label>{c.phone}<input type="tel" name="phone" /></label>
+        <label>{c.message}<textarea name="message" rows="4"></textarea></label>
+        <button type="submit" class="btn btn-primary">{c.submit}</button>
+      </form>
+      <p id="partner-success" class="form-success" hidden>{c.success}</p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('partner-form');
+      var ok = document.getElementById('partner-success');
+      if (!form) return;
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        try {
+          await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString(),
+          });
+        } catch (err) {}
+        form.hidden = true;
+        ok.hidden = false;
+        ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    })();
+  </script>
+</BaseLayout>

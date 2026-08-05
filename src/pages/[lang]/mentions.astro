@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, allLangs, defaultLang, type Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return allLangs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = (Astro.params.lang ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+
+interface Section { h: string; p: string[]; }
+const content: Record<Lang, { title: string; intro: string; sections: Section[]; note: string }> = {
+  fr: {
+    title: 'Mentions légales & affiliation',
+    intro: 'Informations légales relatives au site « Que Faire à Barcelone ».',
+    note: 'Ce document est un modèle indicatif à compléter avec vos informations réelles et, si besoin, à faire valider par un professionnel du droit.',
+    sections: [
+      { h: 'Éditeur du site', p: [
+        'Le site « Que Faire à Barcelone » est édité par [Nom de l’éditeur / société], [statut juridique], [adresse].',
+        'Contact : [adresse e-mail]. Directeur de la publication : [Nom].',
+      ] },
+      { h: 'Hébergement', p: [
+        'Le site est hébergé par [Nom de l’hébergeur], [adresse / site web de l’hébergeur].',
+      ] },
+      { h: 'Liens d’affiliation', p: [
+        'Ce site contient des liens d’affiliation, notamment vers GetYourGuide, Booking.com, Welcome Pickups et Airalo.',
+        'Si vous effectuez une réservation ou un achat via ces liens, nous pouvons percevoir une commission, sans aucun surcoût pour vous. Ces commissions contribuent à financer le site.',
+        'Nos recommandations restent indépendantes et fondées sur l’intérêt des voyageurs.',
+      ] },
+      { h: 'Publicité', p: [
+        'Le site est susceptible d’afficher des annonces publicitaires (par exemple via Google AdSense). Ces services tiers peuvent déposer des cookies sur votre appareil.',
+      ] },
+      { h: 'Propriété intellectuelle', p: [
+        'Les contenus du site (textes, structure, mises en page) sont la propriété de l’éditeur, sauf mention contraire.',
+        'Certaines photographies proviennent de Wikimedia Commons et d’Unsplash, sous leurs licences respectives (voir le fichier de crédits des images).',
+      ] },
+      { h: 'Données personnelles & cookies', p: [
+        'Le site fait appel à des services tiers (GetYourGuide, Google, etc.) susceptibles d’utiliser des cookies à des fins de fonctionnement, de mesure d’audience ou de publicité.',
+        'Conformément à la réglementation applicable (dont le RGPD), vous disposez d’un droit d’accès, de rectification et de suppression de vos données. Pour toute demande : [adresse e-mail].',
+      ] },
+    ],
+  },
+  en: {
+    title: 'Legal notice & affiliate disclosure',
+    intro: 'Legal information about the “What To Do in Barcelona” website.',
+    note: 'This document is an indicative template to be completed with your real information and, if needed, reviewed by a legal professional.',
+    sections: [
+      { h: 'Site publisher', p: [
+        'The “What To Do in Barcelona” website is published by [Publisher / company name], [legal status], [address].',
+        'Contact: [email address]. Publication director: [Name].',
+      ] },
+      { h: 'Hosting', p: [
+        'The website is hosted by [Host name], [host address / website].',
+      ] },
+      { h: 'Affiliate links', p: [
+        'This site contains affiliate links, notably to GetYourGuide, Booking.com, Welcome Pickups and Airalo.',
+        'If you make a booking or purchase through these links, we may earn a commission at no extra cost to you. These commissions help fund the site.',
+        'Our recommendations remain independent and based on travellers’ best interests.',
+      ] },
+      { h: 'Advertising', p: [
+        'The site may display advertising (for example via Google AdSense). These third-party services may place cookies on your device.',
+      ] },
+      { h: 'Intellectual property', p: [
+        'The site’s content (texts, structure, layouts) is the property of the publisher, unless otherwise stated.',
+        'Some photographs come from Wikimedia Commons and Unsplash, under their respective licences (see the image credits file).',
+      ] },
+      { h: 'Personal data & cookies', p: [
+        'The site uses third-party services (GetYourGuide, Google, etc.) that may use cookies for functionality, analytics or advertising purposes.',
+        'In accordance with applicable regulations (including the GDPR), you have the right to access, rectify and delete your data. For any request: [email address].',
+      ] },
+    ],
+  },
+  es: {
+    title: 'Aviso legal y afiliación',
+    intro: 'Información legal sobre el sitio web «Qué Hacer en Barcelona».',
+    note: 'Este documento es una plantilla orientativa que debe completarse con tu información real y, si es necesario, ser revisada por un profesional del derecho.',
+    sections: [
+      { h: 'Editor del sitio', p: [
+        'El sitio «Qué Hacer en Barcelona» está editado por [Nombre del editor / empresa], [forma jurídica], [dirección].',
+        'Contacto: [correo electrónico]. Director de publicación: [Nombre].',
+      ] },
+      { h: 'Alojamiento', p: [
+        'El sitio está alojado por [Nombre del proveedor], [dirección / web del proveedor].',
+      ] },
+      { h: 'Enlaces de afiliación', p: [
+        'Este sitio contiene enlaces de afiliación, en particular a GetYourGuide, Booking.com, Welcome Pickups y Airalo.',
+        'Si realizas una reserva o compra a través de estos enlaces, podemos recibir una comisión, sin coste adicional para ti. Estas comisiones ayudan a financiar el sitio.',
+        'Nuestras recomendaciones son independientes y se basan en el interés de los viajeros.',
+      ] },
+      { h: 'Publicidad', p: [
+        'El sitio puede mostrar anuncios publicitarios (por ejemplo, mediante Google AdSense). Estos servicios de terceros pueden instalar cookies en tu dispositivo.',
+      ] },
+      { h: 'Propiedad intelectual', p: [
+        'Los contenidos del sitio (textos, estructura, maquetación) son propiedad del editor, salvo indicación contraria.',
+        'Algunas fotografías proceden de Wikimedia Commons y Unsplash, bajo sus respectivas licencias (consulta el archivo de créditos de las imágenes).',
+      ] },
+      { h: 'Datos personales y cookies', p: [
+        'El sitio utiliza servicios de terceros (GetYourGuide, Google, etc.) que pueden usar cookies con fines de funcionamiento, analítica o publicidad.',
+        'De acuerdo con la normativa aplicable (incluido el RGPD), tienes derecho a acceder, rectificar y suprimir tus datos. Para cualquier solicitud: [correo electrónico].',
+      ] },
+    ],
+  },
+};
+
+const c = content[lang];
+---
+
+<BaseLayout lang={lang} path="mentions" title={c.title} description={c.intro}>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--c-terracotta);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;">{t('footer.legal')}</span>
+      <h1>{c.title}</h1>
+      <p>{c.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="prose">
+        {c.sections.map((s) => (
+          <>
+            <h2>{s.h}</h2>
+            {s.p.map((para) => <p>{para}</p>)}
+          </>
+        ))}
+        <p style="margin-top:2rem;color:var(--c-muted);font-size:.9rem;font-style:italic;">{c.note}</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

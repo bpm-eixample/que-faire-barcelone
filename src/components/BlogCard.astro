@@ -1,0 +1,34 @@
+---
+import { useTranslations, localizePath, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+  title: string;
+  summary: string;
+  date: Date;
+  emoji?: string;
+  tags?: string[];
+}
+const { lang, slug, title, summary, date, emoji = '📝', tags = [] } = Astro.props;
+const t = useTranslations(lang);
+const localeMap = { fr: 'fr-FR', en: 'en-GB', es: 'es-ES' } as const;
+const dateStr = new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+const searchText = [title, summary, tags.join(' ')].join(' ');
+const category = tags[0] ?? '';
+---
+
+<article class="card" data-search={searchText} data-category={category}>
+  <a class="thumb" href={localizePath(lang, `blog/${slug}`)} aria-label={title}>
+    <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>
+  </a>
+  <div class="body">
+    {tags[0] && <span class="tag">{tags[0]}</span>}
+    <h3><a href={localizePath(lang, `blog/${slug}`)} style="color:inherit">{title}</a></h3>
+    <p>{summary}</p>
+    <div class="meta"><span>🗓️ {dateStr}</span></div>
+    <div class="card-foot">
+      <a class="link-more" href={localizePath(lang, `blog/${slug}`)}>{t('common.readMore')}</a>
+    </div>
+  </div>
+</article>
