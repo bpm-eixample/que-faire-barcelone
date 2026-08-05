@@ -249,6 +249,7 @@ a.card.resto:hover .link-more::after { transform: translateX(5px); }
   background: var(--c-night); color: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg);
   padding: 1.1rem 1.3rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
 }
+.cookie-banner[hidden] { display: none !important; }
 .cookie-text { margin: 0; font-size: .92rem; color: rgba(255,255,255,.9); max-width: 60ch; }
 .cookie-text a { color: var(--c-gold-vif); text-decoration: underline; }
 .cookie-actions { display: flex; gap: .6rem; flex-wrap: wrap; }

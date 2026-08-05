@@ -3,10 +3,13 @@
 > Rappel de session. Site Astro multilingue (FR/EN/ES), non encore déployé.
 > Lancer en local : `cd ~/que-faire-barcelone && export PATH="/opt/homebrew/bin:$PATH" && npm run dev`
 
-## 🔴 Priorité 1 — Actions qui te débloquent (comptes à créer par toi)
+## ✅ FAIT
+- **Déploiement Netlify + domaine quefaireabarcelone.com** → EN LIGNE sur https://quefaireabarcelone.com
 
-- [ ] **Déployer le site** (quand prêt) : Netlify Drop → glisser le dossier `dist/` sur https://app.netlify.com/drop (créer un compte Netlify gratuit). Build : `npm run build`.
-- [ ] **Compléter les mentions légales** : remplacer les `[à compléter]` dans `src/pages/[lang]/mentions.astro` (nom éditeur, statut, adresse, e-mail de contact, hébergeur).
+## 🔴 Priorité 1 — À finaliser
+- [ ] **Compléter les mentions légales** : remplacer les `[à compléter]` dans `src/pages/[lang]/mentions.astro` (nom éditeur, statut, adresse, e-mail de contact, hébergeur = Netlify).
+- [ ] **Notification e-mail du formulaire partenaire** : dans Netlify → Forms → « devenir-partenaire » → Settings → Add notification → Email notification (ton adresse).
+- [ ] **Google Search Console** : ajouter le domaine, vérifier, soumettre `https://quefaireabarcelone.com/sitemap-index.xml`.
 
 ## 🟠 Priorité 2 — Monétisation (créer les comptes, puis me donner les IDs)
 
