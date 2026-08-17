@@ -1,5 +1,5 @@
 ---
-import { useTranslations, localizePath, allLangs, defaultLang, type Lang } from '../i18n/utils';
+import { useTranslations, localizePath, withSlash, allLangs, defaultLang, type Lang } from '../i18n/utils';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
@@ -29,8 +29,7 @@ const t = useTranslations(lang);
 const pageTitle = title ? `${title} · ${t('site.name')}` : `${t('site.name')} — ${t('site.tagline')}`;
 const desc = description ?? t('hero.subtitle');
 
-const withSlash = (u: string) => (u.endsWith('/') ? u : u + '/');
-const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const canonical = new URL(withSlash(Astro.url.pathname), Astro.site).toString();
 const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).toString() : new URL('/images/hero.jpg', Astro.site).toString();
 
 let alternates: { lang: string; url: string }[] = [];

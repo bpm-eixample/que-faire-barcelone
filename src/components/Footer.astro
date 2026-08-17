@@ -1,5 +1,5 @@
 ---
-import { useTranslations, localizePath, allLangs, languages, type Lang } from '../i18n/utils';
+import { useTranslations, localizePath, withSlash, allLangs, languages, type Lang } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
@@ -9,7 +9,7 @@ interface Props {
 const { lang, path = '', translations } = Astro.props;
 const t = useTranslations(lang);
 const clean = path.replace(/^\/+|\/+$/g, '');
-const langUrl = (l: Lang) => (translations && translations[l]) ? translations[l]! : (clean ? `/${l}/${clean}` : `/${l}`);
+const langUrl = (l: Lang) => withSlash((translations && translations[l]) ? translations[l]! : (clean ? `/${l}/${clean}` : `/${l}`));
 
 const links = [
   { key: 'nav.activites', href: 'activites' },

@@ -1,5 +1,5 @@
 ---
-import { allLangs, type Lang } from '../i18n/utils';
+import { allLangs, withSlash, type Lang } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
@@ -10,7 +10,7 @@ interface Props {
 }
 const { lang, path = '', translations } = Astro.props;
 const clean = path.replace(/^\/+|\/+$/g, '');
-const urlFor = (l: Lang) => (translations && translations[l]) ? translations[l]! : (clean ? `/${l}/${clean}` : `/${l}`);
+const urlFor = (l: Lang) => withSlash((translations && translations[l]) ? translations[l]! : (clean ? `/${l}/${clean}` : `/${l}`));
 ---
 
 <div class="lang-switch" role="group" aria-label="Language">
