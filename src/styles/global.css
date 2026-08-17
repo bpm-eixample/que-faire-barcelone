@@ -222,6 +222,13 @@ a.card.resto:hover .link-more::after { transform: translateX(5px); }
 .prose h2 { margin-top: 2rem; }
 .prose img { border-radius: var(--radius); margin: 1.5rem 0; }
 .prose ul { padding-left: 1.2rem; }
+/* Tableaux d'article — scrollables horizontalement sur mobile */
+.prose table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: .98rem; }
+.prose thead th { background: var(--c-sand); text-align: left; font-family: var(--font-sans); font-weight: 700; }
+.prose :is(th, td) { padding: .7rem .9rem; border: 1px solid var(--c-line); vertical-align: top; }
+.prose tbody tr:nth-child(even) { background: rgba(0, 0, 0, .02); }
+.prose blockquote { margin: 1.6rem 0; padding: 1rem 1.2rem; border-left: 4px solid var(--c-terracotta); background: var(--c-sand); border-radius: 0 var(--radius) var(--radius) 0; }
+.prose blockquote p { margin: 0; }
 
 /* Page header band */
 .page-head { background: var(--c-sand); border-bottom: 1px solid var(--c-line); padding: clamp(2.5rem, 6vw, 4rem) 0; }
