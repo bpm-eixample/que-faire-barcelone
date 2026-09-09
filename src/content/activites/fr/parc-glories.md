@@ -3,6 +3,8 @@ lang: fr
 image: /images/glories.jpg
 title: Le parc de les Glòries
 summary: Un grand parc moderne idéal pour un pique-nique ou se poser au soleil, loin de l'agitation.
+seoTitle: "Parc de les Glòries : aire de jeux, pelouses et accès"
+seoDescription: "Le grand parc de Sant Martí : immense aire de jeux pour les enfants, pelouses et coins d'ombre. Entrée libre, métro Glòries (L1), à côté du DHUB."
 category: Parc & détente
 area: Sant Martí
 duration: Libre

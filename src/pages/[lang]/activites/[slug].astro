@@ -24,7 +24,7 @@ const { Content } = await entry.render();
 const d = entry.data;
 ---
 
-<BaseLayout lang={lang} path="activites" title={d.title} description={d.summary} ogImage={d.image} translations={translations}>
+<BaseLayout lang={lang} path="activites" title={d.title} seoTitle={d.seoTitle} description={d.seoDescription ?? d.summary} ogImage={d.image} translations={translations}>
   <section class="page-head">
     <div class="container">
       <a href={localizePath(lang, 'activites')} class="link-more" style="display:inline-block;margin-bottom:1rem;">← {t('nav.activites')}</a>

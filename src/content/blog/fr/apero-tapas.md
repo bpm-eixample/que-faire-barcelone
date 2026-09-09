@@ -3,6 +3,8 @@ lang: fr
 key: aperitivo
 title: L'apéro à la barcelonaise, vermut, cava & tapas
 summary: "Le rituel de l'apéritif à Barcelone : où boire un vermut, déguster des tapas et trinquer au cava."
+seoTitle: "Apéro catalan à Barcelone : vermut, tapas et cava"
+seoDescription: "Le rituel local heure par heure : où boire un vermut, quelles tapas commander et les quartiers où les Barcelonais trinquent vraiment."
 date: 2026-05-22
 author: La rédaction
 emoji: 🍷

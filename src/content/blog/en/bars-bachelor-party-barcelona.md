@@ -3,6 +3,8 @@ lang: en
 key: bachelor-bars
 title: "The best bars for a bachelor or bachelorette party in Barcelona"
 summary: "Where to go out as a group in Barcelona for a stag or hen do: cocktail bars, venues that take large tables, clubs, and the running order of a night that lasts."
+seoTitle: "Best Bars for a Bachelor Party in Barcelona"
+seoDescription: "Bars and clubs that actually take a group of twelve on a Saturday night — by neighbourhood, with the running order of a night that lasts."
 date: 2026-08-17
 author: The editors
 emoji: 🍸

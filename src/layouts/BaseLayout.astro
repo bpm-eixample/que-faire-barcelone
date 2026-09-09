@@ -23,10 +23,12 @@ interface Props {
   jsonLd?: Record<string, unknown>;
   /** URLs de traduction explicites par langue (pages de détail aux slugs différents). */
   translations?: Partial<Record<Lang, string>>;
+  /** Balise <title> utilisée telle quelle (sans le suffixe du nom du site) — pour les pages optimisées SEO où chaque caractère compte. */
+  seoTitle?: string;
 }
-const { lang, title, description, path = '', gyg = false, ogImage, hreflang = true, jsonLd, translations } = Astro.props;
+const { lang, title, description, path = '', gyg = false, ogImage, hreflang = true, jsonLd, translations, seoTitle } = Astro.props;
 const t = useTranslations(lang);
-const pageTitle = title ? `${title} · ${t('site.name')}` : `${t('site.name')} — ${t('site.tagline')}`;
+const pageTitle = seoTitle ?? (title ? `${title} · ${t('site.name')}` : `${t('site.name')} — ${t('site.tagline')}`);
 const desc = description ?? t('hero.subtitle');
 
 const canonical = new URL(withSlash(Astro.url.pathname), Astro.site).toString();

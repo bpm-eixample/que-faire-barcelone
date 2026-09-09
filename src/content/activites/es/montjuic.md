@@ -3,6 +3,8 @@ lang: es
 image: /images/montjuic.jpg
 title: La colina de Montjuïc
 summary: "Jardines, museos, un castillo y la Fuente Mágica: toda una colina por explorar sobre el puerto."
+seoTitle: "La colina de Montjuïc: qué ver y cómo subir"
+seoDescription: "Castillo, jardines, MNAC y la Fuente Mágica: qué ver en la colina de Montjuïc y cómo subir en teleférico o funicular. Media jornada, acceso libre."
 category: Mirador
 area: Montjuïc
 duration: Media jornada

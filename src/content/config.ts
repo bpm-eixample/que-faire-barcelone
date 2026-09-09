@@ -18,6 +18,10 @@ const activites = defineCollection({
     emoji: z.string().default('📍'),
     featured: z.boolean().default(false),
     order: z.number().default(99),
+    /** balise <title> sur mesure (sans suffixe du site) — pour les pages travaillées au CTR */
+    seoTitle: z.string().optional(),
+    /** meta description sur mesure, si différente du `summary` affiché sur la page */
+    seoDescription: z.string().optional(),
   }),
 });
 
@@ -101,6 +105,10 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     /** identifiant commun aux versions FR/EN/ES d'un même article (pour la bascule de langue) */
     key: z.string().optional(),
+    /** balise <title> sur mesure (sans suffixe du site) — pour les pages travaillées au CTR */
+    seoTitle: z.string().optional(),
+    /** meta description sur mesure, si différente du `summary` affiché sur la page */
+    seoDescription: z.string().optional(),
   }),
 });
 

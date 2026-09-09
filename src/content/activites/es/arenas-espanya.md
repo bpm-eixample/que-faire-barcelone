@@ -3,6 +3,8 @@ lang: es
 image: /images/arenas.jpg
 title: Las Arenas de Plaza España
 summary: Un centro comercial dentro de una antigua plaza de toros, con una terraza panorámica sobre la ciudad.
+seoTitle: "Las Arenas de Barcelona: centro comercial y mirador 360°"
+seoDescription: "La antigua plaza de toros de Plaça d'Espanya, hoy centro comercial: tiendas, cine y una azotea circular con vistas a Montjuïc. Metro Espanya."
 category: Compras
 area: Plaça d'Espanya
 duration: 1–2h
