@@ -45,7 +45,7 @@ Two **free** open-air music festivals in several parts of the city. **BAM** (Bar
 
 ### 5. The piromusical
 
-The grand finale: a **fireworks, music and water** show on the Sunday night that closes the festival. It traditionally takes place at the Font Màgica on Montjuïc, but **the 2026 edition moves elsewhere** because of works on the hill — check the official programme for the exact location before heading out.
+The grand finale: a **fireworks, music and water** show on the Sunday night that closes the festival. It traditionally takes place at the Font Màgica on Montjuïc, but because of works on the hill **the 2026 edition is launched from Bogatell beach**, on **Sunday 27 September at 10pm**. The good news: it can be seen from much of the seafront, from Barceloneta to Poblenou.
 
 ## MAC, the street-arts side of la Mercè
 

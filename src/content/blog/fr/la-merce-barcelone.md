@@ -45,7 +45,7 @@ Deux festivals de musique **gratuits** en plein air, dans plusieurs points de la
 
 ### 5. Le piromusical
 
-Le bouquet final : un spectacle **feu d'artifice + musique + jeux d'eau** le dimanche soir, qui clôt la fête. Il se tient traditionnellement à la Font Màgica de Montjuïc, mais **l'édition 2026 change d'emplacement** en raison des travaux sur la montagne — vérifiez le lieu exact sur le programme officiel avant de vous déplacer.
+Le bouquet final : un spectacle **feu d'artifice + musique + jeux d'eau** le dimanche soir, qui clôt la fête. Il se tient traditionnellement à la Font Màgica de Montjuïc, mais en raison des travaux sur la montagne, **l'édition 2026 est tirée depuis la plage du Bogatell**, le **dimanche 27 septembre à 22 h**. Bonne nouvelle : il se voit depuis une grande partie du front de mer, de la Barceloneta au Poblenou.
 
 ## Le MAC, la Mercè des arts de rue
 

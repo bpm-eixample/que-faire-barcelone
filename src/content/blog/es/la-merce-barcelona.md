@@ -45,7 +45,7 @@ Dos festivales de música **gratuitos** al aire libre repartidos por la ciudad. 
 
 ### 5. El piromusical
 
-El broche final: un espectáculo de **fuegos artificiales, música y agua** el domingo por la noche. Tradicionalmente se celebra en la Font Màgica de Montjuïc, pero la **edición 2026 cambia de ubicación** por las obras de la montaña: comprueba el lugar exacto en el programa oficial antes de ir.
+El broche final: un espectáculo de **fuegos artificiales, música y agua** el domingo por la noche. Tradicionalmente se celebra en la Font Màgica de Montjuïc, pero por las obras de la montaña la **edición 2026 se dispara desde la playa del Bogatell**, el **domingo 27 de septiembre a las 22 h**. La buena noticia: se ve desde buena parte del frente marítimo, de la Barceloneta al Poblenou.
 
 ## El MAC, la Mercè de las artes de calle
 
