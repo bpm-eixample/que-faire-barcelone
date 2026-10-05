@@ -145,12 +145,8 @@ const LIST_NAMES = ['AASHI LIST', 'SHAZ LIST', 'WELOVEBCN', 'THUNDER LIST', 'PAR
     (function () {
       var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
       var safeUrl = function (u) { return /^https:\/\//.test(u) ? u : '#'; };
-      // Petites traductions des textes de conditions (écrits en français côté API)
-      var TR = {
-        en: [[/Gratuit jusqu'à/g, 'Free until'], [/Gratuit avec RSVP/g, 'Free with RSVP'], [/Gratuit/g, 'Free'], [/\+ coupe-file/g, '+ skip the line'], [/\+ 1 verre offert/g, '+ free drink'], [/Billets uniquement/g, 'Tickets only'], [/Entrée/g, 'Entry'], [/ jusqu'à /g, ' until '], [/After : /g, 'After-party: '], [/ gratuits?/g, ' free'], [/Inscription/g, 'Sign-up'], [/début/g, 'starts'], [/l'équipe/g, 'per team'], [/Payant/g, 'Paid']],
-        es: [[/Gratuit jusqu'à/g, 'Gratis hasta'], [/Gratuit avec RSVP/g, 'Gratis con RSVP'], [/Gratuit/g, 'Gratis'], [/\+ coupe-file/g, '+ sin colas'], [/\+ 1 verre offert/g, '+ copa gratis'], [/Billets uniquement/g, 'Solo con entrada'], [/Entrée/g, 'Entrada'], [/ jusqu'à /g, ' hasta '], [/After : /g, 'Después: '], [/ gratuits?/g, ' gratis'], [/Inscription/g, 'Inscripción'], [/début/g, 'empieza'], [/l'équipe/g, 'por equipo'], [/Payant/g, 'De pago']],
-      };
-      var tr = function (s) { (TR[LANG] || []).forEach(function (r) { s = String(s).replace(r[0], r[1]); }); return s; };
+      // Champs traduits fournis par l'API (n_en, c_es…), repli sur le français
+      var loc = function (e, f) { return (LANG !== 'fr' && e[f + '_' + LANG]) || e[f]; };
       var fmt = function (iso) { var p = iso.split('-').map(Number); return LANG === 'en' ? L.months[p[1] - 1] + ' ' + p[2] : p[2] + ' ' + L.months[p[1] - 1]; };
       var wd = function (iso) { return (new Date(iso + 'T12:00:00Z').getUTCDay() + 6) % 7; };
       var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' }).format(new Date());
@@ -183,8 +179,8 @@ const LIST_NAMES = ['AASHI LIST', 'SHAZ LIST', 'WELOVEBCN', 'THUNDER LIST', 'PAR
         var tags = (e.l || []).map(function (x) { return '<span class="nb-tag list">' + esc((DATA.lists[x] || {}).n || x) + '</span>'; }).join('');
         var badge = e.live ? '<span class="nb-badge">' + L.confirmed + '</span>' : e.special ? '<span class="nb-badge">' + L.special + '</span>' : '<span class="nb-badge rec">' + L.recurring + '</span>';
         return '<article class="nb-ev k-' + esc(e.k) + '"><div class="t">' + esc(e.t) + '</div><div class="main">' +
-          '<div><span class="name">' + esc(e.n) + '</span><span class="where">' + esc(e.w) + '</span></div>' +
-          '<div class="cond">' + esc(tr(e.c)) + '</div>' +
+          '<div><span class="name">' + esc(loc(e, 'n')) + '</span><span class="where">' + esc(loc(e, 'w')) + '</span></div>' +
+          '<div class="cond">' + esc(loc(e, 'c')) + '</div>' +
           '<div class="nb-tags">' + badge + '<span class="nb-tag">' + esc(L.cats[e.k] || e.k) + '</span>' + tags +
           '<a class="go" href="' + esc(safeUrl(e.u)) + '" target="_blank" rel="noopener nofollow">' + L.go + ' ↗</a></div></div></article>';
       }
@@ -204,7 +200,7 @@ const LIST_NAMES = ['AASHI LIST', 'SHAZ LIST', 'WELOVEBCN', 'THUNDER LIST', 'PAR
         var i = DATA.days.findIndex(function (x) { return x.date === today; });
         week = i >= 0 ? Math.floor(i / 7) : 0; sel = i >= 0 ? today : null;
         $('nb-lists').innerHTML = Object.keys(DATA.lists).map(function (k) { var x = DATA.lists[k];
-          return '<div><h3>' + esc(x.n) + '</h3><p>' + esc(LANG === 'fr' ? x.d : '') + '</p><a href="' + esc(safeUrl(x.u)) + '" target="_blank" rel="noopener nofollow">' + esc(x.u.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '')) + ' ↗</a></div>'; }).join('');
+          return '<div><h3>' + esc(x.n) + '</h3><p>' + esc(loc(x, 'd')) + '</p><a href="' + esc(safeUrl(x.u)) + '" target="_blank" rel="noopener nofollow">' + esc(x.u.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '')) + ' ↗</a></div>'; }).join('');
         var g = new Date(DATA.generated).toLocaleString(L.locale, { timeZone: 'Europe/Madrid', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
         $('nb-stamp').textContent = L.updated + ' ' + g;
         renderBar(); render();
