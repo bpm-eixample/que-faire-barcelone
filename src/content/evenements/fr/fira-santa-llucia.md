@@ -9,4 +9,4 @@ category: Marché
 url: "https://es.firadesantallucia.cat/"
 emoji: 🎄
 ---
-Près de **285 stands** installés devant la cathédrale : santons, sapins, décorations, artisanat et bien sûr le **caganer** et le **tió de Nadal**, les deux traditions catalanes qui surprennent toujours les visiteurs. Entrée libre. Animations, danses traditionnelles et concerts de Noël tout au long du mois. Venez en semaine ou en fin de matinée : c'est bondé le week-end après 16 h.
+Plus de **200 stands** installés devant la cathédrale : santons, sapins, décorations, artisanat et bien sûr le **caganer** et le **tió de Nadal**, les deux traditions catalanes qui surprennent toujours les visiteurs. Entrée libre. Animations, danses traditionnelles et concerts de Noël tout au long du mois. Venez en semaine ou en fin de matinée : c'est bondé le week-end après 16 h. Guide complet : [Noël à Barcelone](/fr/blog/noel-barcelone-fira-santa-llucia/).

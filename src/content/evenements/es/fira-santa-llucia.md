@@ -9,4 +9,4 @@ category: Mercado
 url: "https://es.firadesantallucia.cat/"
 emoji: 🎄
 ---
-Unas **285 paradas** delante de la catedral con figuras de belén, abetos, decoración y artesanía, incluidos el **caganer** y el **tió de Nadal**, las dos tradiciones catalanas que siempre sorprenden. Entrada libre, con bailes tradicionales y conciertos de Navidad durante todo diciembre. Ve entre semana o a media mañana: los fines de semana a partir de las 16 h está a rebosar.
+Más de **200 paradas** delante de la catedral con figuras de belén, abetos, decoración y artesanía, incluidos el **caganer** y el **tió de Nadal**, las dos tradiciones catalanas que siempre sorprenden. Entrada libre, con bailes tradicionales y conciertos de Navidad durante todo diciembre. Ve entre semana o a media mañana: los fines de semana a partir de las 16 h está a rebosar. Guía completa: [Navidad en Barcelona](/es/blog/navidad-barcelona-fira-santa-llucia/).

@@ -9,4 +9,4 @@ category: Market
 url: "https://es.firadesantallucia.cat/"
 emoji: 🎄
 ---
-Around **285 stalls** in front of the cathedral selling nativity figures, trees, decorations and crafts — including the **caganer** and the **tió de Nadal**, the two Catalan traditions that always surprise visitors. Free entry, with traditional dancing and Christmas concerts throughout December. Go on a weekday or late morning: it gets packed at weekends after 4pm.
+Over **200 stalls** in front of the cathedral selling nativity figures, trees, decorations and crafts — including the **caganer** and the **tió de Nadal**, the two Catalan traditions that always surprise visitors. Free entry, with traditional dancing and Christmas concerts throughout December. Go on a weekday or late morning: it gets packed at weekends after 4pm. Full guide: [Christmas in Barcelona](/en/blog/christmas-barcelona-santa-llucia/).
