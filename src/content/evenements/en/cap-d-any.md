@@ -7,4 +7,4 @@ location: All over the city
 category: Festival
 emoji: 🍇
 ---
-Spanish tradition says you eat **twelve grapes**, one on each stroke of midnight, for a lucky year ahead. The city puts on an end-of-year show (venue confirmed in December) and bars and clubs run parties that sell out well in advance. Book your New Year's Eve dinner in early December — tables go fast.
+Spanish tradition says you eat **twelve grapes**, one on each stroke of midnight, for a lucky year ahead. The city puts on a free show, this year at Montjuïc's **Olympic Ring** (Avinguda Maria Cristina is closed for works) and bars and clubs run parties that sell out well in advance. Book your New Year's Eve dinner in early December — tables go fast. Full guide: [New Year's Eve in Barcelona](/en/blog/new-years-eve-barcelona/).

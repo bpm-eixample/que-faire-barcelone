@@ -7,4 +7,4 @@ location: Toute la ville
 category: Fête
 emoji: 🍇
 ---
-La tradition espagnole veut qu'on avale **douze grains de raisin**, un à chaque coup de minuit, pour une année chanceuse. La ville organise un spectacle de fin d'année (lieu confirmé en décembre), les bars et clubs proposent des soirées à réserver très en avance. Réservez votre restaurant du 31 dès le début décembre : les tables partent vite.
+La tradition espagnole veut qu'on avale **douze grains de raisin**, un à chaque coup de minuit, pour une année chanceuse. La ville organise un spectacle gratuit, qui se tient cette année à l'**Anella Olímpica** de Montjuïc (travaux sur l'avenue Maria Cristina), les bars et clubs proposent des soirées à réserver très en avance. Réservez votre restaurant du 31 dès le début décembre : les tables partent vite. Guide complet : [Nouvel An à Barcelone](/fr/blog/nouvel-an-barcelone/).

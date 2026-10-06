@@ -7,4 +7,4 @@ location: Toda la ciudad
 category: Fiesta
 emoji: 🍇
 ---
-La tradición manda comer **doce uvas**, una por cada campanada, para tener un año con suerte. La ciudad organiza un espectáculo de fin de año (ubicación confirmada en diciembre) y los bares y clubes montan fiestas que se llenan con semanas de antelación. Reserva el restaurante del 31 a principios de diciembre: las mesas vuelan.
+La tradición manda comer **doce uvas**, una por cada campanada, para tener un año con suerte. La ciudad organiza un espectáculo gratuito, este año en el **Anillo Olímpico** de Montjuïc (por las obras en la avenida Maria Cristina) y los bares y clubes montan fiestas que se llenan con semanas de antelación. Reserva el restaurante del 31 a principios de diciembre: las mesas vuelan. Guía completa: [Nochevieja en Barcelona](/es/blog/nochevieja-barcelona/).
