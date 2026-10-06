@@ -8,4 +8,4 @@ location: Toute la ville
 category: Tradition
 emoji: 🌰
 ---
-Ici, le 31 octobre se fête surtout autour des **châtaignes grillées**, des **patates douces** et des **panellets** (petites boules d'amande et pignons), accompagnés d'un verre de moscatel. Les *castanyeres* installent leurs braseros dans la rue, les pâtisseries débordent de panellets, et le **1er novembre (Tots Sants)** est férié : beaucoup de commerces ferment, pensez-y pour vos courses.
+Ici, le 31 octobre se fête surtout autour des **châtaignes grillées**, des **patates douces** et des **panellets** (petites boules d'amande et pignons), accompagnés d'un verre de moscatel. Les *castanyeres* installent leurs braseros dans la rue, les pâtisseries débordent de panellets, et le **1er novembre (Tots Sants)** tombe un dimanche en 2026 : la plupart des commerces sont fermés, pensez-y pour vos courses. Guide complet : [Halloween et Castanyada à Barcelone](/fr/blog/halloween-castanyada-barcelone/).
