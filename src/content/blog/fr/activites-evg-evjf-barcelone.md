@@ -47,6 +47,8 @@ Deuxième critère, souvent oublié : **le bruit**. Beaucoup de formats en salle
 
 **Flamenco** — cours d'initiation plutôt que spectacle. Rire de soi ensemble fait plus pour un groupe qu'une heure assis dans le noir.
 
+> 👉 Envie de tout ça à la fois ? **[JOTEAMS](https://joteams.com/fr/nos-activites-de-teambuilding-a-barcelone/?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-activites-evg-evjf-barcelone)** organise des olympiades sur mesure à Barcelone : vous piochez parmi plus de 30 jeux (lancer de hache, bubble foot, beach-volley, karting, Mario Kart…), vous fixez la durée, et ils s'occupent de l'organisation, des équipes et du classement. Parfait pour départager le groupe avant le dîner.
+
 ## Combien prévoir, et pour quelle taille de groupe
 
 | Format | Budget / personne | Taille idéale |

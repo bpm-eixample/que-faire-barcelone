@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ActivityCard from '../../components/ActivityCard.astro';
 import GygWidget from '../../components/GygWidget.astro';
 import BpmWorkshopCard from '../../components/BpmWorkshopCard.astro';
+import JoteamsCard from '../../components/JoteamsCard.astro';
 import EventCard from '../../components/EventCard.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { paidActivities } from '../../data/paidActivities';
@@ -26,7 +27,7 @@ const freeActivites = (await getCollection('activites', (e) => e.data.lang === l
 // Activités payantes mises en avant : les ateliers BpM (lien direct) complétés par des widgets GetYourGuide
 const homePaid = (paidActivities.filter((a) => a.featured).length
   ? paidActivities.filter((a) => a.featured)
-  : paidActivities).slice(0, Math.max(0, 3 - bpmWorkshops.length));
+  : paidActivities).slice(0, Math.max(0, 3 - bpmWorkshops.length - 1)); // -1 : carte JOTEAMS
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -119,6 +120,7 @@ const shortcuts = [
         {bpmWorkshops.map((w) => (
           <BpmWorkshopCard workshop={w} lang={lang} placement="home" />
         ))}
+        <JoteamsCard lang={lang} placement="home" />
         {homePaid.map((a) => (
           <GygWidget tourId={a.tourId} lang={lang} />
         ))}

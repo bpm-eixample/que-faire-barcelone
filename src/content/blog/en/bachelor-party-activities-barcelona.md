@@ -47,6 +47,8 @@ The second criterion, almost always forgotten: **noise**. Many indoor formats ma
 
 **Flamenco** — take a beginner's class rather than watching a show. Laughing at yourselves together does more for a group than an hour sitting in the dark.
 
+> 👉 Want a bit of everything? **[JOTEAMS](https://joteams.com/our-teambuilding-activities-in-barcelona/?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-bachelor-party-activities-barcelona)** runs custom team competitions in Barcelona: you pick from 30+ games (axe throwing, bubble football, beach volleyball, karting, Mario Kart…), set the length, and they handle the organisation, the teams and the leaderboard. Perfect for settling scores before dinner.
+
 ## What to budget, and for how many
 
 | Format | Per person | Ideal group |

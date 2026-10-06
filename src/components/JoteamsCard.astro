@@ -1,0 +1,27 @@
+---
+import type { Lang } from '../i18n/utils';
+import { joteams, joteamsUrl } from '../data/joteams';
+
+interface Props {
+  lang: Lang;
+  /** Emplacement de la carte, repris dans utm_campaign (home, activites…) */
+  placement: string;
+}
+const { lang, placement } = Astro.props;
+---
+
+<a class="card bpm-workshop" href={joteamsUrl(lang, placement)} target="_blank" rel="noopener">
+  <span class="thumb">
+    <span class="badge">{joteams.badge[lang]}</span>
+    <img src={joteams.image} alt={joteams.title[lang]} loading="lazy" width="900" height="900" />
+  </span>
+  <span class="body">
+    <h3>{joteams.title[lang]}</h3>
+    <span class="meta">
+      {joteams.meta[lang].map((m) => <span>{m}</span>)}
+      <span>📍 Barcelona</span>
+    </span>
+    <p>{joteams.summary[lang]}</p>
+    <span class="card-foot"><span class="link-more">{joteams.cta[lang]}</span></span>
+  </span>
+</a>

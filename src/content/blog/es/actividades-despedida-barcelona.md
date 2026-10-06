@@ -47,6 +47,8 @@ Segundo criterio, casi siempre olvidado: **el ruido**. Muchos formatos en sala h
 
 **Flamenco** — mejor una clase de iniciación que un espectáculo. Reírse de uno mismo en grupo une más que una hora sentados a oscuras.
 
+> 👉 ¿Lo queréis todo a la vez? **[JOTEAMS](https://joteams.com/es/actividades-de-teambuilding-en-barcelona/?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-actividades-despedida-barcelona)** organiza olimpiadas a medida en Barcelona: elegís entre más de 30 juegos (lanzamiento de hacha, bubble football, beach vóley, karting, Mario Kart…), fijáis la duración y ellos se encargan de la organización, los equipos y la clasificación. Perfecto para picarse antes de la cena.
+
 ## Cuánto presupuestar y para cuántos
 
 | Formato | Precio / persona | Tamaño ideal |
