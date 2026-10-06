@@ -7,4 +7,4 @@ location: Port Vell y centro de la ciudad
 category: Tradición
 emoji: 👑
 ---
-La tarde del 5 de enero los **Reyes Magos** desembarcan en el **Port Vell** y cruzan la ciudad en una cabalgata de carrozas, música y caramelos lanzados al público. Para las familias catalanas este es EL momento de la Navidad, mucho más que el 25 de diciembre. Llega pronto si quieres primera fila con niños.
+La tarde del 5 de enero los **Reyes Magos** desembarcan en el **Port Vell** y cruzan la ciudad en una cabalgata de carrozas, música y caramelos lanzados al público. Para las familias catalanas este es EL momento de la Navidad, mucho más que el 25 de diciembre. Llega pronto si quieres primera fila con niños. Llegada de los Reyes hacia las 16:30 en el Portal de la Pau, desfile de 18:00 a 21:00 aprox. Guía completa: [Cabalgata de Reyes en Barcelona](/es/blog/cabalgata-reyes-barcelona/).

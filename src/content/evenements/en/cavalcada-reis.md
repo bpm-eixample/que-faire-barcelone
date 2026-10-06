@@ -7,4 +7,4 @@ location: Port Vell, then the city centre
 category: Tradition
 emoji: 👑
 ---
-On the evening of 5 January the **Three Kings** land at **Port Vell** by boat, then cross the city in a parade of floats, music and sweets thrown into the crowd. For Catalan families this — not 25 December — is the big Christmas moment. Come early if you want a front-row spot with kids.
+On the evening of 5 January the **Three Kings** land at **Port Vell** by boat, then cross the city in a parade of floats, music and sweets thrown into the crowd. For Catalan families this — not 25 December — is the big Christmas moment. Come early if you want a front-row spot with kids. The Kings arrive around 4:30 pm at Portal de la Pau; the parade runs from about 6 pm to 9 pm. Full guide: [Three Kings Parade in Barcelona](/en/blog/three-kings-parade-barcelona/).
