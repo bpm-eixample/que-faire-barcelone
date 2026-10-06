@@ -61,6 +61,6 @@ Le **mercredi des Cendres** (10 février), le carnaval meurt… en grande pompe.
 
 ## Et autour du carnaval ?
 
-Février, c'est aussi la **Santa Eulàlia** (12 février), la fête d'hiver de Barcelone avec géants et castells, et le festival **Llum BCN**, qui illumine le Poblenou. Toutes les dates sont sur notre page [Événements](/fr/evenements/), et les soirées gratuites de la semaine sur [Soirées gratuites](/fr/soirees/).
+Février, c'est aussi la **Santa Eulàlia** (12 février), la fête d'hiver de Barcelone avec géants et castells, et le festival **[Llum BCN](/fr/blog/llum-bcn-festival-lumieres-barcelone/)**, qui illumine le Poblenou. Toutes les dates sont sur notre page [Événements](/fr/evenements/), et les soirées gratuites de la semaine sur [Soirées gratuites](/fr/soirees/).
 
 > Un EVG, un EVJF ou une sortie entre amis pendant le carnaval ? Commencez la soirée derrière un bar : [réservez l'atelier sangria & cocktails du BPM Bar](https://www.bpmbar.es/fr/ateliers/atelier-sangria-et-cocktails?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-carnaval-barcelone), déguisements bienvenus.

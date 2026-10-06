@@ -61,6 +61,6 @@ On **Ash Wednesday** (10 February), Carnival dies… in style. A mock funeral pr
 
 ## What else is on around Carnival?
 
-February also brings **Santa Eulàlia** (12 February), Barcelona's winter festival with giants and human towers, and the **Llum BCN** light festival in Poblenou. All the dates are on our [Events](/en/evenements/) page, and this week's free parties on [Free parties](/en/soirees/).
+February also brings **Santa Eulàlia** (12 February), Barcelona's winter festival with giants and human towers, and the **[Llum BCN](/en/blog/llum-bcn-light-festival-barcelona/)** light festival in Poblenou. All the dates are on our [Events](/en/evenements/) page, and this week's free parties on [Free parties](/en/soirees/).
 
 > A stag do, hen party or night out with friends during Carnival? Start the evening behind a bar: [book the BPM Bar sangria & cocktail workshop](https://www.bpmbar.es/en/workshops/sangria-and-cocktail-workshop?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-barcelona-carnival) — costumes welcome.

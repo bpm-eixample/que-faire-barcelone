@@ -65,6 +65,6 @@ C'est le grand bon plan de la fête : pendant les festes, de **nombreux musées 
 
 ## Et autour de Santa Eulàlia ?
 
-Début février, le festival **Llum BCN** illumine les rues du Poblenou avec des installations lumineuses gratuites, et le **Carnaval** occupe la semaine précédente, du 4 au 10 février 2027 — voir notre guide du [Carnaval à Barcelone et Sitges](/fr/blog/carnaval-barcelone/). Toutes les dates sont sur notre page [Événements](/fr/evenements/), et nos idées pour les jours de pluie dans [Barcelone sous la pluie](/fr/blog/barcelone-sous-la-pluie/).
+Début février, le festival **[Llum BCN](/fr/blog/llum-bcn-festival-lumieres-barcelone/)** illumine les rues du Poblenou avec des installations lumineuses gratuites, et le **Carnaval** occupe la semaine précédente, du 4 au 10 février 2027 — voir notre guide du [Carnaval à Barcelone et Sitges](/fr/blog/carnaval-barcelone/). Toutes les dates sont sur notre page [Événements](/fr/evenements/), et nos idées pour les jours de pluie dans [Barcelone sous la pluie](/fr/blog/barcelone-sous-la-pluie/).
 
 > Envie de prolonger la fête entre adultes ? Le soir, [réservez l'atelier sangria & cocktails du BPM Bar](https://www.bpmbar.es/fr/ateliers/atelier-sangria-et-cocktails?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-fete-santa-eulalia-barcelone) : 1 h 30 derrière le bar, en plein Eixample.

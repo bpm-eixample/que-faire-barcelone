@@ -61,6 +61,6 @@ A **40 minutos en tren** de Barcelona, el pueblo costero de Sitges organiza el c
 
 ## ¿Y alrededor del carnaval?
 
-Febrero es también la **Santa Eulàlia** (12 de febrero), la fiesta de invierno de Barcelona con gigantes y castells, y el festival **Llum BCN**, que ilumina el Poblenou. Todas las fechas están en nuestra página [Eventos](/es/evenements/), y las fiestas gratis de la semana en [Fiestas gratis](/es/soirees/).
+Febrero es también la **Santa Eulàlia** (12 de febrero), la fiesta de invierno de Barcelona con gigantes y castells, y el festival **[Llum BCN](/es/blog/llum-bcn-festival-luces-barcelona/)**, que ilumina el Poblenou. Todas las fechas están en nuestra página [Eventos](/es/evenements/), y las fiestas gratis de la semana en [Fiestas gratis](/es/soirees/).
 
 > ¿Una despedida o una salida con amigos en carnaval? Empezad la noche detrás de una barra: [reserva el taller de sangría y cócteles del BPM Bar](https://www.bpmbar.es/talleres/taller-de-sangria-y-cocteles?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-carnaval-barcelona), disfraces bienvenidos.

@@ -9,4 +9,4 @@ category: Culture
 url: "https://www.barcelona.cat/llumbcn/"
 emoji: 💡
 ---
-For its 16th edition, the light arts festival turns the streets and squares of **Poblenou**, around the **DHub** design museum, into a trail of installations by international artists. **Free**, in the evenings. Go as soon as it opens on Friday: Saturday night gets very crowded.
+For its 16th edition, the light arts festival turns the streets and squares of **Poblenou**, around the **DHub** design museum, into a trail of installations by international artists. **Free**, in the evenings. Go as soon as it opens on Friday: Saturday night gets very crowded. Usual times: 7 pm – midnight Friday and Saturday, 7 pm – 11 pm Sunday. Full guide: [Llum BCN, a practical guide](/en/blog/llum-bcn-light-festival-barcelona/).
