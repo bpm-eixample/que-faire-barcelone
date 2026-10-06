@@ -7,4 +7,4 @@ location: Ciutat Vella
 category: Fête
 emoji: 🎈
 ---
-En l'honneur de sainte Eulalie, co-patronne de la ville, Barcelone se transforme pendant quelques jours en fête pour les familles : parades de **géants**, *castells*, ateliers, concerts et **entrée gratuite dans de nombreux musées**. C'est la version hivernale et plus intime de la Mercè, presque uniquement fréquentée par les locaux.
+En l'honneur de sainte Eulalie, co-patronne de la ville, Barcelone se transforme pendant quelques jours en fête pour les familles : parades de **géants**, *castells*, ateliers, concerts et **entrée gratuite dans de nombreux musées**. C'est la version hivernale et plus intime de la Mercè, presque uniquement fréquentée par les locaux. Guide complet : [Santa Eulàlia à Barcelone](/fr/blog/fete-santa-eulalia-barcelone/).

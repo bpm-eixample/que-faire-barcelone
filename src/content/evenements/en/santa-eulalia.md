@@ -7,4 +7,4 @@ location: Ciutat Vella
 category: Festival
 emoji: 🎈
 ---
-In honour of Saint Eulalia, the city's co-patron, Barcelona turns into a few days of family celebration: parades of **giants**, *castells*, workshops, concerts and **free entry to many museums**. It's the winter, small-scale version of la Mercè — and almost entirely a locals' affair.
+In honour of Saint Eulalia, the city's co-patron, Barcelona turns into a few days of family celebration: parades of **giants**, *castells*, workshops, concerts and **free entry to many museums**. It's the winter, small-scale version of la Mercè — and almost entirely a locals' affair. Full guide: [Santa Eulàlia in Barcelona](/en/blog/santa-eulalia-festival-barcelona/).

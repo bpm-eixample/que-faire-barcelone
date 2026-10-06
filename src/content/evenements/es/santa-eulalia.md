@@ -7,4 +7,4 @@ location: Ciutat Vella
 category: Fiesta
 emoji: 🎈
 ---
-En honor a Santa Eulalia, copatrona de la ciudad, Barcelona se convierte durante unos días en una fiesta familiar: cercaviles de **gigantes**, *castells*, talleres, conciertos y **entrada gratuita a muchos museos**. Es la versión invernal y más íntima de la Mercè, con público casi exclusivamente local.
+En honor a Santa Eulalia, copatrona de la ciudad, Barcelona se convierte durante unos días en una fiesta familiar: cercaviles de **gigantes**, *castells*, talleres, conciertos y **entrada gratuita a muchos museos**. Es la versión invernal y más íntima de la Mercè, con público casi exclusivamente local. Guía completa: [Santa Eulàlia en Barcelona](/es/blog/fiestas-santa-eulalia-barcelona/).
