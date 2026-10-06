@@ -1,0 +1,12 @@
+---
+/**
+ * Compteur de visites Cloudflare Web Analytics — sans cookie, donc sans
+ * consentement requis. Le jeton est public par conception.
+ * Jeton à créer dans Cloudflare → Analytics & Logs → Web Analytics → Add a site.
+ */
+const CF_BEACON_TOKEN = '50e25f18b370485e8b7da706141ea4a9';
+---
+
+{CF_BEACON_TOKEN && (
+  <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })}></script>
+)}

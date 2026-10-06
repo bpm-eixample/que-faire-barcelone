@@ -3,6 +3,7 @@ import { useTranslations, localizePath, withSlash, allLangs, defaultLang, type L
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import CfWebAnalytics from '../components/CfWebAnalytics.astro';
 import { GYG_PARTNER_ID } from '../data/paidActivities';
 import { ADSENSE_CLIENT } from '../data/ads';
 import '../styles/global.css';
@@ -103,6 +104,7 @@ if (translations) {
     </main>
     <Footer lang={lang} path={path} translations={translations} />
     <CookieConsent lang={lang} />
+    <CfWebAnalytics />
     {gyg && (
       <script is:inline async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id={GYG_PARTNER_ID}></script>
     )}
