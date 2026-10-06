@@ -8,4 +8,4 @@ location: Toda la ciudad
 category: Fiesta
 emoji: 🎭
 ---
-El carnaval arranca el **Dijous Gras** (jueves lardero), día de la *coca de llardons* y la tortilla de butifarra, y termina con el **Enterrament de la Sardina** el Miércoles de Ceniza. Por el medio: la *Taronjada* (batalla de confeti naranja), calles disfrazadas y desfiles en cada barrio — el de **Sitges**, a 40 minutos en tren, es el más espectacular de Cataluña.
+El carnaval arranca el **Dijous Gras** (jueves lardero), día de la *coca de llardons* y la tortilla de butifarra, y termina con el **Enterrament de la Sardina** el Miércoles de Ceniza. Por el medio: la *Taronjada* (batalla de confeti naranja), calles disfrazadas y desfiles en cada barrio — el de **Sitges**, a 40 minutos en tren, es el más espectacular de Cataluña. Guía completa: [Carnaval en Barcelona y Sitges](/es/blog/carnaval-barcelona/).

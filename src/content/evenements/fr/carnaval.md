@@ -8,4 +8,4 @@ location: Toute la ville et quartiers
 category: Fête
 emoji: 🎭
 ---
-Le carnaval s'ouvre le **Dijous Gras** (jeudi gras), jour de la *coca de llardons* et de l'omelette aux saucisses, et se termine par l'**Enterrament de la Sardina** le mercredi des Cendres. Entre les deux : la *Taronjada* (bataille de confettis orange), des rues costumées et des défilés dans chaque quartier — celui de **Sitges**, à 40 minutes en train, est le plus spectaculaire de Catalogne.
+Le carnaval s'ouvre le **Dijous Gras** (jeudi gras), jour de la *coca de llardons* et de l'omelette aux saucisses, et se termine par l'**Enterrament de la Sardina** le mercredi des Cendres. Entre les deux : la *Taronjada* (bataille de confettis orange), des rues costumées et des défilés dans chaque quartier — celui de **Sitges**, à 40 minutes en train, est le plus spectaculaire de Catalogne. Guide complet : [Carnaval à Barcelone et Sitges](/fr/blog/carnaval-barcelone/).

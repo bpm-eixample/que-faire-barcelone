@@ -8,4 +8,4 @@ location: All over the city
 category: Festival
 emoji: 🎭
 ---
-Carnival opens on **Dijous Gras** (Fat Thursday), the day of *coca de llardons* and sausage omelette, and ends with the **Burial of the Sardine** on Ash Wednesday. In between: the *Taronjada* orange-confetti battle, costumes everywhere and parades in every neighbourhood — the one in **Sitges**, 40 minutes away by train, is the most spectacular in Catalonia.
+Carnival opens on **Dijous Gras** (Fat Thursday), the day of *coca de llardons* and sausage omelette, and ends with the **Burial of the Sardine** on Ash Wednesday. In between: the *Taronjada* orange-confetti battle, costumes everywhere and parades in every neighbourhood — the one in **Sitges**, 40 minutes away by train, is the most spectacular in Catalonia. Full guide: [Carnival in Barcelona and Sitges](/en/blog/barcelona-carnival/).
