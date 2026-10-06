@@ -24,7 +24,7 @@ const href = url && url !== '#' ? url : `https://www.google.com/maps/search/?api
   <div class="thumb">
     {image
       ? <img src={image} alt={name} loading="lazy" />
-      : <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>}
+      : <div class="ph ph-fill">{emoji}</div>}
   </div>
   <div class="body">
     <span class="tag">{type}</span>

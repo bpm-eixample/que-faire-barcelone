@@ -34,7 +34,7 @@ const isExternal = !!url && url !== '#';
     <span class="badge badge-date">🗓️ {dateLabel}</span>
     {image
       ? <img src={image} alt={title} loading="lazy" />
-      : <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>}
+      : <div class="ph ph-fill">{emoji}</div>}
   </div>
   <div class="body">
     {category && <span class="tag">{category}</span>}

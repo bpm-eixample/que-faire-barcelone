@@ -100,21 +100,21 @@ const LIST_NAMES = ['AASHI LIST', 'SHAZ LIST', 'WELOVEBCN', 'THUNDER LIST', 'PAR
     .nb-bar { background: var(--c-cream); padding: .7rem 0; display: grid; gap: .6rem; border-bottom: 1px solid var(--c-line); margin-bottom: 1.2rem; }
     .nb-weeks, .nb-days { display: flex; gap: .4rem; }
     .nb-weeks, .nb-days, .nb-filters { overflow-x: auto; scrollbar-width: none; flex-wrap: nowrap !important; }
-    .nb-weeks button, .nb-days button { font: inherit; cursor: pointer; border: 1px solid var(--c-line); background: #fff; color: var(--c-ink); border-radius: 999px; white-space: nowrap; padding: .35rem .85rem; font-size: .9rem; }
+    .nb-weeks button, .nb-days button { font: inherit; cursor: pointer; border: 1px solid var(--c-line); background: var(--c-surface); color: var(--c-ink); border-radius: 999px; white-space: nowrap; padding: .35rem .85rem; font-size: .9rem; }
     .nb-weeks button { font-size: .82rem; background: transparent; color: var(--c-muted); border-radius: 8px; }
     .nb-weeks button[aria-pressed="true"] { color: var(--c-ink); border-color: var(--c-ink); font-weight: 600; }
     .nb-days button[aria-pressed="true"] { background: var(--c-terracotta); border-color: var(--c-terracotta); color: #fff; }
     .nb-days .dt, .nb-weeks .dt { font-size: .75rem; opacity: .8; margin-left: .3rem; }
     .nb-filters { margin: 0; justify-content: flex-start; max-width: none; }
     .nb-filters .chip-filter { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; flex: none; font-size: .82rem; padding: .3rem .75rem; }
-    .nb-filters .chip-filter[aria-pressed="false"] { opacity: .45; background: #fff; color: var(--c-ink); border-color: var(--c-line); box-shadow: none; }
+    .nb-filters .chip-filter[aria-pressed="false"] { opacity: .45; background: var(--c-surface); color: var(--c-ink); border-color: var(--c-line); box-shadow: none; }
     .nb-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--k); }
     .nb-day { display: grid; gap: .6rem; margin-bottom: 1.6rem; }
     .nb-day h2 { font-size: 1.5rem; margin: .4rem 0 .1rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; }
     .nb-day h2 .when { font-weight: 500; font-size: 1rem; color: var(--c-muted); }
     .nb-day h2 small { font-size: .75rem; font-weight: 600; color: var(--c-muted); letter-spacing: .05em; }
     .nb-day h2 small.today { color: var(--c-terracotta); }
-    .nb-ev { display: grid; grid-template-columns: 58px 1fr; gap: .2rem .9rem; background: #fff; border: 1px solid var(--c-line); border-left: 4px solid var(--k); border-radius: var(--radius-sm); padding: .8rem .95rem; }
+    .nb-ev { display: grid; grid-template-columns: 58px 1fr; gap: .2rem .9rem; background: var(--c-surface); border: 1px solid var(--c-line); border-left: 4px solid var(--k); border-radius: var(--radius-sm); padding: .8rem .95rem; }
     .nb-ev .t { font-variant-numeric: tabular-nums; color: var(--c-muted); font-size: .88rem; padding-top: .15rem; }
     .nb-ev .main { min-width: 0; display: grid; gap: .25rem; }
     .nb-ev .name { font-weight: 600; font-size: 1.02rem; margin-right: .5rem; }
@@ -130,13 +130,13 @@ const LIST_NAMES = ['AASHI LIST', 'SHAZ LIST', 'WELOVEBCN', 'THUNDER LIST', 'PAR
     .nb-h2 { font-size: 1.6rem; margin: 2.4rem 0 .8rem; }
     .nb-listnames { color: var(--c-muted); font-size: .9rem; margin-top: -.4rem; }
     .nb-lists { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: .8rem; }
-    .nb-lists > div { background: #fff; border: 1px solid var(--c-line); border-radius: var(--radius-sm); padding: .9rem; display: grid; gap: .3rem; align-content: start; min-width: 0; }
+    .nb-lists > div { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: var(--radius-sm); padding: .9rem; display: grid; gap: .3rem; align-content: start; min-width: 0; }
     .nb-lists h3 { font-size: 1.05rem; margin: 0; }
     .nb-lists p { margin: 0; font-size: .88rem; color: var(--c-muted); }
-    .nb-lists a { color: var(--c-terracotta); font-weight: 600; font-size: .88rem; word-break: break-word; }
+    .nb-lists a { color: var(--c-gold-vif); font-weight: 600; font-size: .88rem; word-break: break-word; }
     .nb-tips { color: var(--c-muted); display: grid; gap: .4rem; padding-left: 1.2rem; }
     .nb-tips b { color: var(--c-ink); }
-    .k-disco { --k: #6a3fc8; } .k-pong { --k: #0b8a5a; } .k-social { --k: #b8600b; } .k-club { --k: #b5245c; } .k-lang { --k: #1d6fb8; }
+    .k-disco { --k: #9b6bff; } .k-pong { --k: #1fc48a; } .k-social { --k: #ff9d2e; } .k-club { --k: #ff4f8b; } .k-lang { --k: #4aa3ff; }
     @media (min-width: 760px) { .nb-bar { position: sticky; top: 70px; z-index: 5; } }
     @media (max-width: 560px) { .nb-ev { grid-template-columns: 1fr; } }
   </style>

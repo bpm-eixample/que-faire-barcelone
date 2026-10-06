@@ -155,7 +155,7 @@ const shortcuts = [
 
   <!-- ÉVÉNEMENTS -->
   {events.length > 0 && (
-    <section class="section" style="background:var(--c-sand);">
+    <section class="section section-alt">
       <div class="container">
         <div class="section-head head-row">
           <div>
@@ -254,7 +254,7 @@ const shortcuts = [
           if (s.y < -10) { s.y = h + 10; s.x = Math.random() * w; }
           ctx.beginPath();
           ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = s.gold ? 'rgba(244,185,66,' + s.a + ')' : 'rgba(255,255,255,' + (s.a * 0.8) + ')';
+          ctx.fillStyle = s.gold ? 'rgba(255,194,14,' + s.a + ')' : 'rgba(255,255,255,' + (s.a * 0.8) + ')';
           ctx.fill();
         }
         requestAnimationFrame(tick);

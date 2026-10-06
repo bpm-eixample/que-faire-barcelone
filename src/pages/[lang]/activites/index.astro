@@ -45,7 +45,7 @@ const freeActivites = (await getCollection('activites', (e) => e.data.lang === l
 
   <!-- GRATUIT & PLEIN AIR -->
   {freeActivites.length > 0 && (
-    <section class="section anchor-target" id="gratuit" style="background:var(--c-sand);">
+    <section class="section section-alt anchor-target" id="gratuit">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">{t('sec.free.title')}</span>

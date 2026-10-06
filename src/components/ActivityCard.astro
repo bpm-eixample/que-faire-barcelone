@@ -21,7 +21,7 @@ const t = useTranslations(lang);
   <a class="thumb" href={localizePath(lang, `activites/${slug}`)} aria-label={title}>
     {image
       ? <img src={image} alt={title} loading="lazy" />
-      : <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>}
+      : <div class="ph ph-fill">{emoji}</div>}
   </a>
   <div class="body">
     <span class="tag">{category}</span>

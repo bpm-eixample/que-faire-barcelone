@@ -20,7 +20,7 @@ const category = tags[0] ?? '';
 
 <article class="card" data-search={searchText} data-category={category}>
   <a class="thumb" href={localizePath(lang, `blog/${slug}`)} aria-label={title}>
-    <div class="ph" style="background: linear-gradient(135deg,#fff4d6,#f7e3ae);">{emoji}</div>
+    <div class="ph ph-fill">{emoji}</div>
   </a>
   <div class="body">
     {tags[0] && <span class="tag">{tags[0]}</span>}
