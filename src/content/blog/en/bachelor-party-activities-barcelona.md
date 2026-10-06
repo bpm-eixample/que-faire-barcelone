@@ -21,7 +21,7 @@ The second criterion, almost always forgotten: **noise**. Many indoor formats ma
 
 **Cocktail or sangria workshop** — the most requested group format in Barcelona, and for good reason: you learn something, you drink what you made, everyone participates, and it launches the night instead of tiring it out. Ninety minutes to two hours, typically €25–45 per person. Works from 6 to 25 people.
 
-> 👉 **BPM Bar** in the heart of Eixample runs its [cocktail & sangria workshop](/en/activites/#reserver) in an actual bar rather than a seminar room, with a format designed for groups.
+> 👉 **BPM Bar** in the heart of Eixample runs its [cocktail & sangria workshop](https://www.bpmbar.es/en/workshops/sangria-and-cocktail-workshop?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-bachelor-party-activities-barcelona) in an actual bar rather than a seminar room, with a format designed for groups.
 
 **Paella class** — two to three hours cooking and eating together. Excellent on Saturday lunchtime, ahead of a slow afternoon. Fair warning: it's filling, so don't book a heavy dinner after it.
 

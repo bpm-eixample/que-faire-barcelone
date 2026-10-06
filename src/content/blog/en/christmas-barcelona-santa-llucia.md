@@ -65,4 +65,4 @@ For its year as European Capital of Christmas, Barcelona lights up around **130 
 
 On **31 December**, locals eat twelve grapes on the twelve strokes of midnight, then the city parties until morning. On **5 January**, the Three Kings land at Port Vell before parading through the city: for Catalan families it's the biggest moment of the season, far more than the 25th. All the dates are on our [Events](/en/evenements/) page, and the season's free parties on [Free parties](/en/soirees/).
 
-> Organising a team lunch, an end-of-year afterwork or a night out with friends in December? Sangria and cocktail workshops can be booked for groups, and December slots go fast: see our [activities to book](/en/activites/#reserver).
+> Organising a team lunch, an end-of-year afterwork or a night out with friends in December? Sangria and cocktail workshops can be booked for groups, and December slots go fast: [book the BPM Bar sangria & cocktail workshop](https://www.bpmbar.es/en/workshops/sangria-and-cocktail-workshop?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-christmas-barcelona-santa-llucia).

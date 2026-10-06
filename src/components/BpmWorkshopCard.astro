@@ -1,0 +1,38 @@
+---
+import type { Lang } from '../i18n/utils';
+import { bpmWorkshopUrl, type BpmWorkshop } from '../data/bpmWorkshops';
+
+interface Props {
+  workshop: BpmWorkshop;
+  lang: Lang;
+  /** Emplacement de la carte, repris dans utm_campaign (home, activites…) */
+  placement: string;
+}
+const { workshop: w, lang, placement } = Astro.props;
+const href = bpmWorkshopUrl(lang, w.id, placement);
+
+const label: Record<Lang, { from: string; perPerson: string; cta: string; badge: string }> = {
+  fr: { from: 'dès', perPerson: '/ pers.', cta: 'Voir les dates et réserver', badge: 'Atelier · BPM Bar' },
+  es: { from: 'desde', perPerson: '/ pers.', cta: 'Ver fechas y reservar', badge: 'Taller · BPM Bar' },
+  en: { from: 'from', perPerson: 'pp', cta: 'See dates & book', badge: 'Workshop · BPM Bar' },
+};
+const l = label[lang];
+const duration = w.durationMin % 60 ? `${Math.floor(w.durationMin / 60)} h ${w.durationMin % 60}` : `${w.durationMin / 60} h`;
+---
+
+<a class="card bpm-workshop" href={href} target="_blank" rel="noopener">
+  <span class="thumb">
+    <span class="badge">{l.badge}</span>
+    <img src={w.image} alt={w.title[lang]} loading="lazy" width="800" height="500" />
+  </span>
+  <span class="body">
+    <h3>{w.title[lang]}</h3>
+    <span class="meta">
+      <span>⏱️ {duration}</span>
+      <span>📍 Eixample</span>
+      <span>💶 {l.from} {w.priceEur} € {l.perPerson}</span>
+    </span>
+    <p>{w.summary[lang]}</p>
+    <span class="card-foot"><span class="link-more">{l.cta}</span></span>
+  </span>
+</a>

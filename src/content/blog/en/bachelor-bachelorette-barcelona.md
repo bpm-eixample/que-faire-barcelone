@@ -58,7 +58,7 @@ The principle is simple: pick something where **everyone does something**, not w
 
 Every format, with prices and ideal group sizes, is in our dedicated article: **[bachelor party activities in Barcelona](/en/blog/bachelor-party-activities-barcelona/)**.
 
-👉 Our [bookable experiences](/en/activites/#reserver) include the **BPM Bar cocktail & sangria workshop** in the heart of Eixample — a real bar, with a format built for groups.
+👉 Our top pick: the **[BPM Bar cocktail & sangria workshop](https://www.bpmbar.es/en/workshops/sangria-and-cocktail-workshop?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-bachelor-bachelorette-barcelona)** in the heart of Eixample — a real bar, with a format built for groups.
 
 ## Going out
 

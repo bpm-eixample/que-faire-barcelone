@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ActivityCard from '../../../components/ActivityCard.astro';
 import GygWidget from '../../../components/GygWidget.astro';
+import BpmWorkshopCard from '../../../components/BpmWorkshopCard.astro';
 import { paidActivities } from '../../../data/paidActivities';
+import { bpmWorkshops } from '../../../data/bpmWorkshops';
 import { useTranslations, allLangs, defaultLang, type Lang } from '../../../i18n/utils';
 
 export function getStaticPaths() {
@@ -36,6 +38,9 @@ const freeActivites = (await getCollection('activites', (e) => e.data.lang === l
         <p>{t('sec.paid.sub')}</p>
       </div>
       <div class="gyg-grid">
+        {bpmWorkshops.map((w) => (
+          <BpmWorkshopCard workshop={w} lang={lang} placement="activites" />
+        ))}
         {paidActivities.map((a) => (
           <GygWidget tourId={a.tourId} lang={lang} />
         ))}

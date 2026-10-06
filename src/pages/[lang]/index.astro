@@ -3,9 +3,11 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ActivityCard from '../../components/ActivityCard.astro';
 import GygWidget from '../../components/GygWidget.astro';
+import BpmWorkshopCard from '../../components/BpmWorkshopCard.astro';
 import EventCard from '../../components/EventCard.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { paidActivities } from '../../data/paidActivities';
+import { bpmWorkshops } from '../../data/bpmWorkshops';
 import { useTranslations, localizePath, allLangs, defaultLang, type Lang } from '../../i18n/utils';
 
 export function getStaticPaths() {
@@ -21,10 +23,10 @@ const byLang = (lang: Lang) => (e: { data: { lang: Lang } }) => e.data.lang === 
 const freeActivites = (await getCollection('activites', (e) => e.data.lang === lang && e.data.free))
   .sort((a, b) => a.data.order - b.data.order).slice(0, 3);
 
-// Activités payantes mises en avant (widgets GetYourGuide)
+// Activités payantes mises en avant : les ateliers BpM (lien direct) complétés par des widgets GetYourGuide
 const homePaid = (paidActivities.filter((a) => a.featured).length
   ? paidActivities.filter((a) => a.featured)
-  : paidActivities).slice(0, 3);
+  : paidActivities).slice(0, Math.max(0, 3 - bpmWorkshops.length));
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -114,6 +116,9 @@ const shortcuts = [
         <a class="link-more" href={localizePath(lang, 'activites')}>{t('common.seeAll')}</a>
       </div>
       <div class="gyg-grid">
+        {bpmWorkshops.map((w) => (
+          <BpmWorkshopCard workshop={w} lang={lang} placement="home" />
+        ))}
         {homePaid.map((a) => (
           <GygWidget tourId={a.tourId} lang={lang} />
         ))}

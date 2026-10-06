@@ -58,7 +58,7 @@ El principio es simple: elegid algo donde **todo el mundo haga algo**, no donde 
 
 El detalle de cada formato, con precios y tamaño de grupo ideal, está en nuestro artículo dedicado: **[actividades para despedidas en Barcelona](/es/blog/actividades-despedida-barcelona/)**.
 
-👉 Entre nuestras [actividades para reservar](/es/activites/#reserver) está el **taller de cócteles y sangría del BPM Bar**, en pleno Eixample: un bar de verdad, con un formato pensado para grupos.
+👉 Nuestro favorito: el **[taller de cócteles y sangría del BPM Bar](https://www.bpmbar.es/talleres/taller-de-sangria-y-cocteles?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-despedida-soltero-barcelona)**, en pleno Eixample: un bar de verdad, con un formato pensado para grupos.
 
 ## La noche
 

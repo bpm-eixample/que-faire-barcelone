@@ -21,7 +21,7 @@ Deuxième critère, souvent oublié : **le bruit**. Beaucoup de formats en salle
 
 **Atelier cocktails ou sangria** — le format le plus demandé à Barcelone pour les groupes, et pour de bonnes raisons : on apprend quelque chose, on boit ce qu'on a préparé, tout le monde participe, et ça lance la soirée au lieu de la fatiguer. Comptez 1 h 30 à 2 h, généralement 25 à 45 € par personne. Fonctionne de 6 à 25 personnes.
 
-> 👉 Le **BPM Bar**, en plein Eixample, propose son [atelier cocktails & sangria](/fr/activites/#reserver) animé en français — un vrai bar, pas une salle de séminaire, avec un format pensé pour les groupes.
+> 👉 Le **BPM Bar**, en plein Eixample, propose son [atelier cocktails & sangria](https://www.bpmbar.es/fr/ateliers/atelier-sangria-et-cocktails?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-activites-evg-evjf-barcelone) animé en français — un vrai bar, pas une salle de séminaire, avec un format pensé pour les groupes.
 
 **Cours de paella** — deux à trois heures, on cuisine et on mange ensemble. Excellent le samedi midi, avant une après-midi tranquille. Attention : ça cale, ne prévoyez pas un dîner copieux derrière.
 

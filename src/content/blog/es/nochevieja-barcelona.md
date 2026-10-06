@@ -75,4 +75,4 @@ El **viernes 1 de enero de 2027** es festivo: casi todas las tiendas cierran y l
 
 Las fiestas no acaban aquí: el **5 de enero**, los Reyes Magos desembarcan en el Port Vell antes de recorrer la ciudad, el gran momento del año para los niños. Consulta también nuestra guía de [Navidad en Barcelona](/es/blog/navidad-barcelona-fira-santa-llucia/) y todas las fechas en la página [Eventos](/es/evenements/).
 
-> ¿Celebras la Nochevieja en grupo en Barcelona? Un taller de sangría o cócteles el 30 o el 31 por la tarde es el aperitivo perfecto antes de la cena: mira nuestras [actividades para reservar](/es/activites/#reserver).
+> ¿Celebras la Nochevieja en grupo en Barcelona? Un taller de sangría o cócteles el 30 o el 31 por la tarde es el aperitivo perfecto antes de la cena: [reserva el taller de sangría y cócteles del BPM Bar](https://www.bpmbar.es/talleres/taller-de-sangria-y-cocteles?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-nochevieja-barcelona).

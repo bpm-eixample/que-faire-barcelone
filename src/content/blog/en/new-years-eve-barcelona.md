@@ -75,4 +75,4 @@ Not a fan of crowds? The Bunkers del Carmel or Barceloneta beach give you a dist
 
 The festivities don't stop there: on **5 January**, the Three Kings land at Port Vell before parading through the city — the biggest moment of the year for children. See also our guide to [Christmas in Barcelona](/en/blog/christmas-barcelona-santa-llucia/) and all the dates on the [Events](/en/evenements/) page.
 
-> Celebrating New Year in Barcelona with a group? A sangria or cocktail workshop on the afternoon of the 30th or 31st is the perfect pre-party: see our [activities to book](/en/activites/#reserver).
+> Celebrating New Year in Barcelona with a group? A sangria or cocktail workshop on the afternoon of the 30th or 31st is the perfect pre-party: [book the BPM Bar sangria & cocktail workshop](https://www.bpmbar.es/en/workshops/sangria-and-cocktail-workshop?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-new-years-eve-barcelona).

@@ -28,10 +28,10 @@ export interface PaidActivity {
   featured?: boolean;
 }
 
+// Les deux ateliers du BPM Bar (GYG 1255110 et 1235740) ne passent plus par GetYourGuide :
+// ils ont leurs propres cartes avec lien direct vers bpmbar.es, voir src/data/bpmWorkshops.ts.
 export const paidActivities: PaidActivity[] = [
-  { tourId: '1255110', featured: true }, // BPM BAR — atelier sangria & cocktails
-  { tourId: '1235740', featured: true }, // BPM BAR — cocktails créatifs avec cava
-  { tourId: '50027' },
+  { tourId: '50027', featured: true },
   { tourId: '53791' },
   { tourId: '398519' },
   { tourId: '913286' },

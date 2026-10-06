@@ -76,4 +76,4 @@ En 2026, la Toussaint tombe un dimanche : la plupart des commerces sont de toute
 
 Fin octobre, c'est aussi le **48h Open House** (les bâtiments fermés au public ouvrent leurs portes), le festival de jazz et, en novembre, le festival In-Edit. Tout est à jour sur notre page [Événements](/fr/evenements/), et nos idées de sorties de saison sont réunies dans [Barcelone en automne](/fr/blog/barcelone-en-automne/).
 
-> Envie d'une activité de groupe pour le week-end d'Halloween ? Les ateliers sangria et cocktails tournent normalement ce week-end-là, mais les créneaux du samedi partent vite : voyez nos [activités à réserver](/fr/activites/#reserver).
+> Envie d'une activité de groupe pour le week-end d'Halloween ? Les ateliers sangria et cocktails tournent normalement ce week-end-là, mais les créneaux du samedi partent vite : [réservez l'atelier sangria & cocktails du BPM Bar](https://www.bpmbar.es/fr/ateliers/atelier-sangria-et-cocktails?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-halloween-castanyada-barcelone).

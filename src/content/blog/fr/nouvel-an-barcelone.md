@@ -75,4 +75,4 @@ Le **vendredi 1er janvier 2027** est férié : la plupart des commerces sont fer
 
 Les fêtes ne s'arrêtent pas là : le **5 janvier**, les Rois mages débarquent au Port Vell avant de défiler dans la ville, le grand moment de l'année pour les enfants. Retrouvez aussi notre guide de [Noël à Barcelone](/fr/blog/noel-barcelone-fira-santa-llucia/) et toutes les dates sur la page [Événements](/fr/evenements/).
 
-> Vous fêtez le Nouvel An en groupe à Barcelone ? Un atelier sangria ou cocktails le 30 ou le 31 après-midi, c'est l'apéro idéal avant le réveillon : voyez nos [activités à réserver](/fr/activites/#reserver).
+> Vous fêtez le Nouvel An en groupe à Barcelone ? Un atelier sangria ou cocktails le 30 ou le 31 après-midi, c'est l'apéro idéal avant le réveillon : [réservez l'atelier sangria & cocktails du BPM Bar](https://www.bpmbar.es/fr/ateliers/atelier-sangria-et-cocktails?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-nouvel-an-barcelone).

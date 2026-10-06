@@ -76,4 +76,4 @@ In 2026 All Saints' Day falls on a Sunday: most shops are closed anyway, but mus
 
 Late October also brings **48h Open House** (buildings usually closed to the public open their doors), the jazz festival and, in November, the In-Edit film festival. It's all kept up to date on our [Events](/en/evenements/) page, and our seasonal ideas are gathered in [Barcelona in autumn](/en/blog/barcelona-in-autumn/).
 
-> Looking for a group activity for Halloween weekend? Sangria and cocktail workshops run as usual that weekend, but Saturday slots go fast: see our [activities to book](/en/activites/#reserver).
+> Looking for a group activity for Halloween weekend? Sangria and cocktail workshops run as usual that weekend, but Saturday slots go fast: [book the BPM Bar sangria & cocktail workshop](https://www.bpmbar.es/en/workshops/sangria-and-cocktail-workshop?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-halloween-castanyada-barcelona).

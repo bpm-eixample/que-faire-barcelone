@@ -58,7 +58,7 @@ Le principe : choisissez une activité où **tout le monde fait quelque chose**,
 
 Le détail de chaque format, avec ce qui convient à quelle taille de groupe, est dans notre article dédié : **[les activités EVG et EVJF à Barcelone](/fr/blog/activites-evg-evjf-barcelone/)**.
 
-👉 Nos [ateliers et expériences à réserver](/fr/activites/#reserver) incluent l'**atelier cocktails & sangria du BPM Bar**, animé en français, en plein Eixample — un format pensé pour les groupes.
+👉 Notre coup de cœur : l'**[atelier cocktails & sangria du BPM Bar](https://www.bpmbar.es/fr/ateliers/atelier-sangria-et-cocktails?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-evg-evjf-barcelone)**, animé en français, en plein Eixample — un format pensé pour les groupes.
 
 ## Où sortir le soir
 

@@ -65,4 +65,4 @@ En su año de Capital Europea de la Navidad, Barcelona ilumina unos **130 km de 
 
 El **31 de diciembre** se toman las doce uvas con las campanadas y la ciudad sale hasta el amanecer. El **5 de enero**, los Reyes Magos desembarcan en el Port Vell antes de recorrer la ciudad: es el gran momento de las fiestas para las familias catalanas, mucho más que el 25. Todas las fechas están en nuestra página [Eventos](/es/evenements/), y las fiestas gratis de la temporada en [Fiestas gratis](/es/soirees/).
 
-> ¿Una comida de empresa, un afterwork de fin de año o un plan entre amigos en diciembre? Los talleres de sangría y cócteles se reservan en grupo y los turnos de diciembre se agotan rápido: mira nuestras [actividades para reservar](/es/activites/#reserver).
+> ¿Una comida de empresa, un afterwork de fin de año o un plan entre amigos en diciembre? Los talleres de sangría y cócteles se reservan en grupo y los turnos de diciembre se agotan rápido: [reserva el taller de sangría y cócteles del BPM Bar](https://www.bpmbar.es/talleres/taller-de-sangria-y-cocteles?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-navidad-barcelona-fira-santa-llucia).

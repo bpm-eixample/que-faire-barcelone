@@ -76,4 +76,4 @@ En 2026 Todos los Santos cae en domingo: la mayoría de tiendas cierran igualmen
 
 A finales de octubre también llega el **48h Open House** (edificios cerrados al público abren sus puertas), el festival de jazz y, en noviembre, el festival In-Edit. Todo está actualizado en nuestra página [Eventos](/es/evenements/), y nuestras ideas de temporada están en [Barcelona en otoño](/es/blog/barcelona-en-otono/).
 
-> ¿Buscas una actividad en grupo para el fin de semana de Halloween? Los talleres de sangría y cócteles funcionan con normalidad esos días, pero los turnos del sábado se agotan rápido: mira nuestras [actividades para reservar](/es/activites/#reserver).
+> ¿Buscas una actividad en grupo para el fin de semana de Halloween? Los talleres de sangría y cócteles funcionan con normalidad esos días, pero los turnos del sábado se agotan rápido: [reserva el taller de sangría y cócteles del BPM Bar](https://www.bpmbar.es/talleres/taller-de-sangria-y-cocteles?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-halloween-castanyada-barcelona).

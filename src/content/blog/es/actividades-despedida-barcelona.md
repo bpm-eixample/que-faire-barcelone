@@ -21,7 +21,7 @@ Segundo criterio, casi siempre olvidado: **el ruido**. Muchos formatos en sala h
 
 **Taller de cócteles o sangría** — el formato más solicitado en Barcelona para grupos, y con motivo: se aprende algo, se bebe lo que uno prepara, participan todos y arranca la noche en lugar de agotarla. Hora y media o dos horas, normalmente de 25 a 45 € por persona. Funciona de 6 a 25 personas.
 
-> 👉 El **BPM Bar**, en pleno Eixample, ofrece su [taller de cócteles y sangría](/es/activites/#reserver) en un bar de verdad, no en una sala de seminarios, con un formato pensado para grupos.
+> 👉 El **BPM Bar**, en pleno Eixample, ofrece su [taller de cócteles y sangría](https://www.bpmbar.es/talleres/taller-de-sangria-y-cocteles?utm_source=quefaireabarcelone&utm_medium=referral&utm_campaign=blog-actividades-despedida-barcelona) en un bar de verdad, no en una sala de seminarios, con un formato pensado para grupos.
 
 **Clase de paella** — dos o tres horas cocinando y comiendo juntos. Excelente el sábado a mediodía, antes de una tarde tranquila. Aviso: llena bastante, no programéis una cena copiosa después.
 
